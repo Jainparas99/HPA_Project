@@ -16,6 +16,7 @@ This repository contains the source code, build system, scripts, and documentati
 
 **File Structure**
 Below is the project’s file structure with explanations of what each directory and file is for, and what you’re expected to add as the project progresses.
+
 hpa_project/
 ├── CMakeLists.txt          # CMake build configuration
 ├── README.md               # Project documentation (this file)
@@ -54,14 +55,19 @@ tests/: Add more test files (e.g., test_fully_connected.cpp) in Phase 2 to valid
 external/cudnn/: Manually place cuDNN files here if not installed system-wide (see dependency installation below).
 profile/: Profiling reports will be generated here by scripts/profile_kernel.sh in Phase 2 and 3.
 
+
 **Understanding CMakeLists.txt**
 
 The CMakeLists.txt file is the heart of the build system, using CMake to configure and build the project. It handles dependencies (CUDA, ONNX Runtime, cuDNN), compiles source files, and sets up optional tests. Here’s a breakdown of its key sections:
 
 **Project Setup:**
+
 cmake_minimum_required(VERSION 3.18)
+
 project(HPA_Project LANGUAGES CXX CUDA)
+
 set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 **CUDA Configuration:**
@@ -179,7 +185,7 @@ Prompts for cuDNN placement in external/cudnn/ if missing.
 
 chmod +x scripts/build_project.sh
 ./scripts/build_project.sh  # Build without tests
-# OR
+or 
 ./scripts/build_project.sh ON  # Build with tests
 What it does:
 Creates a build/ directory.
