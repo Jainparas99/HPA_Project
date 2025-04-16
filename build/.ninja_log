@@ -1,0 +1,7 @@
+# ninja log v5
+3	367	1744774316496668000	CMakeFiles/hpa_project.dir/src/main.cpp.o	412d2a6d183a8712
+3	781	1744774316910979000	CMakeFiles/hpa_project.dir/src/host_utils.cpp.o	d999f838451c6d2e
+3	1179	1744774317319083000	CMakeFiles/hpa_project.dir/src/cuda_kernels.cu.o	243b57e40b15b95d
+4	4532	1744774320657128000	CMakeFiles/hpa_project.dir/external/cnpy/cnpy.cpp.o	af26d5c4a5a84da7
+4532	4948	1744774321092783000	CMakeFiles/hpa_project.dir/cmake_device_link.o	ce6756376fe82cf4
+4948	8701	1744774322498964000	hpa_project	fc231e9736701b90

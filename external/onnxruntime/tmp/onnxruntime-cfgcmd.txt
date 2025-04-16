@@ -1,0 +1,1 @@
+cmd='/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/cmake;-DCMAKE_INSTALL_PREFIX=/home/stu15/s15/pj2196/HPA/final/HPA_Project/external/onnxruntime/install;-Donnxruntime_BUILD_SHARED_LIB=ON;-Donnxruntime_ENABLE_CUDA=ON;-DCMAKE_CUDA_COMPILER=/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/bin/nvcc;-GNinja;-S;<SOURCE_DIR><SOURCE_SUBDIR>;-B;<BINARY_DIR>'

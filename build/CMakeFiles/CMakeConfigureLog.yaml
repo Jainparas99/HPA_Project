@@ -4,8 +4,1005 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:3 (project)"
     message: |
-      The system is: Windows - 10.0.26100 - AMD64
+      The system is: Linux - 6.1.0-28-amd64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ 
+      Build flags: -fvisibility-inlines-hidden;-std=c++17;-fmessage-length=0;-march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/stu15/s15/pj2196/miniconda3/envs/hpa/include;-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include;-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib;-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:1230 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCUDACompiler.cmake:75 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Checking whether the CUDA compiler is NVIDIA using "" matched "nvcc: NVIDIA \\(R\\) Cuda compiler driver":
+      nvcc: NVIDIA (R) Cuda compiler driver
+      Copyright (c) 2005-2025 NVIDIA Corporation
+      Built on Wed_Jan_15_19:20:09_PST_2025
+      Cuda compilation tools, release 12.8, V12.8.61
+      Build cuda_12.8.r12.8/compiler.35404655_0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCUDACompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" succeeded.
+      Compiler: /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/nvcc 
+      Build flags: 
+      Id flags: --keep;--keep-dir;tmp -v
+      
+      The output was:
+      0
+      nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+      #$ NVCC_PREPEND_FLAGS=" -ccbin=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -ccbin=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++"
+      #$ _NVVM_BRANCH_=nvvm
+      #$ _SPACE_= 
+      #$ _CUDART_=cudart
+      #$ _HERE_=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin
+      #$ _THERE_=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin
+      #$ _TARGET_SIZE_=
+      #$ _TARGET_DIR_=
+      #$ _TARGET_DIR_=targets/x86_64-linux
+      #$ TOP=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux
+      #$ CICC_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/nvvm/bin
+      #$ NVVMIR_LIBRARY_DIR=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/nvvm/libdevice
+      #$ LD_LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib:
+      #$ PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/nvvm/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../nvvm/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/home/stu15/s15/pj2196/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+      #$ INCLUDES="-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"  
+      #$ LIBRARIES=  "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"
+      #$ CUDAFE_FLAGS=
+      #$ PTXAS_FLAGS=
+      #$ rm tmp/a_dlink.reg.c
+      #$ "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" 
+      #$ cudafe++ --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" 
+      #$ "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" 
+      #$ "$CICC_PATH/cicc" --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"
+      #$ ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" 
+      #$ fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" 
+      #$ "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" 
+      #$ nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++"
+      #$ fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" 
+      #$ "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++ -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -m64 "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/crt/link.stub" -o "tmp/a_dlink.o" 
+      #$ "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" 
+      
+      
+      Compilation of the CUDA compiler identification source "CMakeCUDACompilerId.cu" produced "a.out"
+      
+      The CUDA compiler identification is NVIDIA, found in:
+        /home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/a.out
+      The host compiler identification is GNU
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/Internal/CMakeNVCCParseImplicitInfo.cmake:128 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCUDACompiler.cmake:242 (cmake_nvcc_parse_implicit_info)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CUDA nvcc implicit link information:
+        found 'PATH=' string: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/nvvm/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../nvvm/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/home/stu15/s15/pj2196/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games]
+        found 'LIBRARIES=' string: ["-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"]
+        found 'INCLUDES=' string: ["-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"  ]
+        considering line: [nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).]
+        considering line: [rm tmp/a_dlink.reg.c]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: [cudafe++ --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" ]
+        considering line: ["$CICC_PATH/cicc" --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"]
+        considering line: [ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" ]
+        considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" ]
+        considering line: [nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++"]
+          ignoring nvlink line
+        considering line: [fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++ -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -m64 "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/crt/link.stub" -o "tmp/a_dlink.o" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+          extracted link line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+        considering line: []
+        extracted link launcher absolute path: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+      
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        link line: [cuda-fake-ld "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+          arg [cuda-fake-ld] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++] ==> ignore
+          arg [-D__CUDA_ARCH_LIST__=520] ==> ignore
+          arg [-D__NV_LEGACY_LAUNCH] ==> ignore
+          arg [-m64] ==> ignore
+          arg [-Wl,--start-group] ==> ignore
+          arg [tmp/a_dlink.o] ==> ignore
+          arg [tmp/CMakeCUDACompilerId.o] ==> ignore
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib]
+          arg [-lcudadevrt] ==> lib [cudadevrt]
+          arg [-lcudart_static] ==> lib [cudart_static]
+          arg [-lrt] ==> lib [rt]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ldl] ==> lib [dl]
+          arg [-Wl,--end-group] ==> ignore
+          arg [-o] ==> ignore
+          arg [a.out] ==> ignore
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        implicit libs: [cudadevrt;cudart_static;rt;pthread;dl]
+        implicit objs: []
+        implicit dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs;/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/Internal/CMakeNVCCParseImplicitInfo.cmake:146 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCUDACompiler.cmake:242 (cmake_nvcc_parse_implicit_info)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CUDA nvcc include information:
+        found 'PATH=' string: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/nvvm/bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../bin:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/../../nvvm/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/home/stu15/s15/pj2196/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin:/usr/local/dcs/jdk/bin:/usr/local/dcs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/stu15/s15/pj2196/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games]
+        found 'LIBRARIES=' string: ["-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"]
+        found 'INCLUDES=' string: ["-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"  ]
+        considering line: [nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).]
+        considering line: [rm tmp/a_dlink.reg.c]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: [cudafe++ --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed  --m64 --parse_templates --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.cpp" --stub_file_name "CMakeCUDACompilerId.cudafe1.stub.c" --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" "tmp/CMakeCUDACompilerId.cpp4.ii" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" ]
+        considering line: ["$CICC_PATH/cicc" --c++17 --gnu_version=110200 --display_error_number --orig_src_file_name "CMakeCUDACompilerId.cu" --orig_src_path_name "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/4.0.0/CompilerIdCUDA/CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"]
+        considering line: [ptxas -arch=sm_52 -m64  "tmp/CMakeCUDACompilerId.ptx"  -o "tmp/CMakeCUDACompilerId.sm_52.cubin" ]
+        considering line: [fatbinary --create="tmp/CMakeCUDACompilerId.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " "--image3=kind=elf,sm=52,file=tmp/CMakeCUDACompilerId.sm_52.cubin" "--image3=kind=ptx,sm=52,file=tmp/CMakeCUDACompilerId.ptx" --embedded-fatbin="tmp/CMakeCUDACompilerId.fatbin.c" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH__=520 -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"   -m64 "tmp/CMakeCUDACompilerId.cudafe1.cpp" -o "tmp/CMakeCUDACompilerId.o" ]
+        considering line: [nvlink -m64 --arch=sm_52 --register-link-binaries="tmp/a_dlink.reg.c"    "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib" -cpu-arch=X86_64 "tmp/CMakeCUDACompilerId.o"  -lcudadevrt  -o "tmp/a_dlink.sm_52.cubin" --host-ccbin "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++"]
+          ignoring nvlink line
+        considering line: [fatbinary --create="tmp/a_dlink.fatbin" -64 --cicc-cmdline="-ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 " -link "--image3=kind=elf,sm=52,file=tmp/a_dlink.sm_52.cubin" --embedded-fatbin="tmp/a_dlink.fatbin.c" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -c -x c++ -DFATBINFILE="\\"tmp/a_dlink.fatbin.c\\"" -DREGISTERLINKBINARYFILE="\\"tmp/a_dlink.reg.c\\"" -I. -D__NV_EXTRA_INITIALIZATION= -D__NV_EXTRA_FINALIZATION= -D__CUDA_INCLUDE_COMPILER_INTERNAL_HEADERS__  -Wno-psabi "-I/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=8 -D__CUDACC_VER_BUILD__=61 -D__CUDA_API_VER_MAJOR__=12 -D__CUDA_API_VER_MINOR__=8 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -D__CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -m64 "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/crt/link.stub" -o "tmp/a_dlink.o" ]
+        considering line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+          extracted link line: ["/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+        considering line: []
+        extracted link launcher absolute path: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+      
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        link line: [cuda-fake-ld "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin"/x86_64-conda-linux-gnu-c++ -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -m64 -Wl,--start-group "tmp/a_dlink.o" "tmp/CMakeCUDACompilerId.o"   "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs" "-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib"  -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group -o "a.out" ]
+          arg [cuda-fake-ld] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++] ==> ignore
+          arg [-D__CUDA_ARCH_LIST__=520] ==> ignore
+          arg [-D__NV_LEGACY_LAUNCH] ==> ignore
+          arg [-m64] ==> ignore
+          arg [-Wl,--start-group] ==> ignore
+          arg [tmp/a_dlink.o] ==> ignore
+          arg [tmp/CMakeCUDACompilerId.o] ==> ignore
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib]
+          arg [-lcudadevrt] ==> lib [cudadevrt]
+          arg [-lcudart_static] ==> lib [cudart_static]
+          arg [-lrt] ==> lib [rt]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ldl] ==> lib [dl]
+          arg [-Wl,--end-group] ==> ignore
+          arg [-o] ==> ignore
+          arg [a.out] ==> ignore
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        implicit libs: [cudadevrt;cudart_static;rt;pthread;dl]
+        implicit objs: []
+        implicit dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs;/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-WnYq1h"
+      binary: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-WnYq1h"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-WnYq1h'
+        
+        Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_06130
+        [1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs    -v -o CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -c /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_06130.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=nocona -mtune=haswell -O2 -std=c++17 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o /tmp/ccmYHdFT.s
+        GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"
+        ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+        End of search list.
+        GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: dcd220e6e6985dc6323f6310e48ad8dd
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/as -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmYHdFT.s
+        GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (Anaconda binutils) 2.40
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -v -Wl,-v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_06130   && :
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        COLLECT_LTO_WRAPPER=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_06130' '-shared-libgcc' '-dumpdir' 'cmTC_06130.'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2 -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBm78UP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06130 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o
+        collect2 version 11.2.0
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBm78UP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06130 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o
+        GNU ld (Anaconda binutils) 2.40
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_06130' '-shared-libgcc' '-dumpdir' 'cmTC_06130.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/include]
+        implicit include dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/backward;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-WnYq1h']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_06130]
+        ignore line: [[1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs    -v -o CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -c /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_06130.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=nocona -mtune=haswell -O2 -std=c++17 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o /tmp/ccmYHdFT.s]
+        ignore line: [GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: dcd220e6e6985dc6323f6310e48ad8dd]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/as -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmYHdFT.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (Anaconda binutils) 2.40]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -Wl -O2 -Wl --sort-common -Wl --as-needed -Wl -z relro -Wl -z now -Wl --disable-new-dtags -Wl --gc-sections -Wl -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -v -Wl -v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_06130   && :]
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/include' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_06130' '-shared-libgcc' '-dumpdir' 'cmTC_06130.']
+        link line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2 -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBm78UP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06130 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccBm78UP.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_06130] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib]
+          arg [-rpath] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-O2] ==> ignore
+          arg [--sort-common] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-znow] ==> ignore
+          arg [--disable-new-dtags] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 11.2.0]
+        ignore line: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBm78UP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06130 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_06130.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+        linker tool for 'CXX': /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crt1.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crti.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crtn.o]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crt1.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crti.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crtn.o]
+        implicit dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:264 (cmake_determine_linker_id)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld" "-v"
+      GNU ld (Anaconda binutils) 2.40
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCUDACompiler.cmake:19 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CUDA compiler ABI info"
+    directories:
+      source: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-CLlbQn"
+      binary: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-CLlbQn"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CUDA_FLAGS: ""
+      CMAKE_CUDA_FLAGS_DEBUG: "-g"
+      CMAKE_CUDA_RUNTIME_LIBRARY: "Static"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+    buildResult:
+      variable: "CMAKE_CUDA_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-CLlbQn'
+        
+        Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_f0e84
+        [1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/nvcc -forward-unknown-to-host-compiler   "--generate-code=arch=compute_52,code=[compute_52,sm_52]"   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o
+        nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -E -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=8 -D __CUDACC_VER_BUILD__=61 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=8 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -D __CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include cuda_runtime.h /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -dumpdir /tmp/ -dumpbase tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"
+        ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+        End of search list.
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.'
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -E -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=8 -D __CUDACC_VER_BUILD__=61 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=8 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -D __CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include cuda_runtime.h /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -dumpdir /tmp/ -dumpbase tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"
+        ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+        End of search list.
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.'
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00265611_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_f0e84.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -Wno-psabi -version -o /tmp/ccTkuYML.s
+        GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"
+        ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"
+        ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+        End of search list.
+        GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: dcd220e6e6985dc6323f6310e48ad8dd
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/as -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o /tmp/ccTkuYML.s
+        GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (Anaconda binutils) 2.40
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.'
+        [2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -v -Wl,-v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -o cmTC_f0e84  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl -L"/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs" -L"/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib" && :
+        Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs
+        COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++
+        COLLECT_LTO_WRAPPER=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper
+        Target: x86_64-conda-linux-gnu
+        Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (Anaconda gcc) 
+        COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_f0e84' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f0e84.'
+         /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2 -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz2UiKg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0e84 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o
+        collect2 version 11.2.0
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz2UiKg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0e84 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o
+        GNU ld (Anaconda binutils) 2.40
+        COLLECT_GCC_OPTIONS='-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_f0e84' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f0e84.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCUDACompiler.cmake:19 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CUDA implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+          add: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include]
+        collapse include dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/include]
+        implicit include dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include/c++/11.2.0/backward;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/include;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCUDACompiler.cmake:19 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CUDA implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-CLlbQn']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_f0e84]
+        ignore line: [[1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/nvcc -forward-unknown-to-host-compiler   "--generate-code=arch=compute_52 code=[compute_52 sm_52]"   -Xcompiler=-v -MD -MT CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -MF CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o.d -x cu -c /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o]
+        ignore line: [nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).]
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -E -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D CUDA_DOUBLE_MATH_FUNCTIONS -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=8 -D __CUDACC_VER_BUILD__=61 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=8 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -D __CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include cuda_runtime.h /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii -m64 -mtune=generic -march=x86-64 -dumpdir /tmp/ -dumpbase tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.cu -dumpbase-ext .cu]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00265611_00000000-7_CMakeCUDACompilerABI.cpp1.']
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -E -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D __CUDACC__ -D __NVCC__ -D __CUDACC_VER_MAJOR__=12 -D __CUDACC_VER_MINOR__=8 -D __CUDACC_VER_BUILD__=61 -D __CUDA_API_VER_MAJOR__=12 -D __CUDA_API_VER_MINOR__=8 -D __NVCC_DIAG_PRAGMA_SUPPORT__=1 -D __CUDACC_DEVICE_ATOMIC_BUILTINS__=1 -include cuda_runtime.h /home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeCUDACompilerABI.cu -o /tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii -m64 -mtune=generic -march=x86-64 -dumpdir /tmp/ -dumpbase tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.cu -dumpbase-ext .cu]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-E' '-D' '__CUDACC__' '-D' '__NVCC__' '-v' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-D' '__CUDACC_VER_MAJOR__=12' '-D' '__CUDACC_VER_MINOR__=8' '-D' '__CUDACC_VER_BUILD__=61' '-D' '__CUDA_API_VER_MAJOR__=12' '-D' '__CUDA_API_VER_MINOR__=8' '-D' '__NVCC_DIAG_PRAGMA_SUPPORT__=1' '-D' '__CUDACC_DEVICE_ATOMIC_BUILTINS__=1' '-include' 'cuda_runtime.h' '-m64' '-o' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.ii' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' '/tmp/tmpxft_00265611_00000000-5_CMakeCUDACompilerABI.cpp4.']
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/cc1plus -quiet -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include -iprefix /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/ -isysroot /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -D __CUDA_ARCH__=520 -D __CUDA_ARCH_LIST__=520 -D __NV_LEGACY_LAUNCH -D CUDA_DOUBLE_MATH_FUNCTIONS /tmp/tmpxft_00265611_00000000-6_CMakeCUDACompilerABI.cudafe1.cpp -quiet -dumpdir CMakeFiles/cmTC_f0e84.dir/ -dumpbase CMakeCUDACompilerABI.cu.cpp -dumpbase-ext .cpp -m64 -mtune=generic -march=x86-64 -Wno-psabi -version -o /tmp/ccTkuYML.s]
+        ignore line: [GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot/include"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/x86_64-conda-linux-gnu]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include/c++/11.2.0/backward]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/include-fixed]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/include]
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (Anaconda gcc) version 11.2.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: dcd220e6e6985dc6323f6310e48ad8dd]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/']
+        ignore line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/as -v -I /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include --64 -o CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o /tmp/ccTkuYML.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (Anaconda binutils) 2.40]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-D' '__CUDA_ARCH__=520' '-D' '__CUDA_ARCH_LIST__=520' '-D' '__NV_LEGACY_LAUNCH' '-c' '-D' 'CUDA_DOUBLE_MATH_FUNCTIONS' '-v' '-Wno-psabi' '-I' '/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../targets/x86_64-linux/include' '-m64' '-o' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.']
+        ignore line: [[2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -v -Wl,-v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -o cmTC_f0e84  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl -L"/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs" -L"/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib" && :]
+        ignore line: [Reading specs from /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/specs]
+        ignore line: [COLLECT_GCC=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: /opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc/configure --build=x86_64-build_conda-linux-gnu --host=x86_64-build_conda-linux-gnu --target=x86_64-conda-linux-gnu --prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --exec_prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built --with-sysroot=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --with-local-prefix=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/gcc_built/x86_64-conda-linux-gnu/sysroot --enable-long-long --disable-multilib --disable-nls --with-gmp=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpfr=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-mpc=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --with-isl=/opt/conda/conda-bld/gcc-compiler_1654084175708/work/buildtools --without-zstd --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --disable-libstdcxx-verbose --enable-lto --enable-libcc1 --enable-threads=posix --enable-plugin --with-pkgversion='Anaconda gcc' --enable-libmpx]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (Anaconda gcc) ]
+        ignore line: [COMPILER_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-v' '-o' 'cmTC_f0e84' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs' '-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f0e84.']
+        link line: [ /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2 -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz2UiKg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0e84 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccz2UiKg.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_f0e84] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib]
+          arg [-L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib]
+          arg [-rpath] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-O2] ==> ignore
+          arg [--sort-common] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-znow] ==> ignore
+          arg [--disable-new-dtags] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o] ==> ignore
+          arg [-lcudadevrt] ==> lib [cudadevrt]
+          arg [-lcudart_static] ==> lib [cudart_static]
+          arg [-lrt] ==> lib [rt]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ldl] ==> lib [dl]
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o]
+          arg [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o] ==> obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 11.2.0]
+        ignore line: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/liblto_plugin.so -plugin-opt=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz2UiKg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0e84 /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64 -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -rpath-link /home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -v CMakeFiles/cmTC_f0e84.dir/CMakeCUDACompilerABI.cu.o -lcudadevrt -lcudart_static -lrt -lpthread -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o]
+        linker tool for 'CUDA': /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crt1.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crt1.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crti.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crti.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o]
+        collapse obj [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64/crtn.o] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crtn.o]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib64] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib]
+        collapse library dir [/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit libs: [cudadevrt;cudart_static;rt;pthread;dl;stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crt1.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crti.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtbegin.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0/crtend.o;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64/crtn.o]
+        implicit dirs: [/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc/x86_64-conda-linux-gnu/11.2.0;/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib/gcc;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib64;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/lib;/home/stu15/s15/pj2196/miniconda3/envs/hpa/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:264 (cmake_determine_linker_id)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CMakeTestCUDACompiler.cmake:19 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CUDA compiler's linker: "/home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld" "-v"
+      GNU ld (Anaconda binutils) 2.40
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:99 (check_cxx_source_compiles)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindCUDA.cmake:1076 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-tEqYwH"
+      binary: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-tEqYwH"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-tEqYwH'
+        
+        Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_05013
+        [1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -DCMAKE_HAVE_LIBC_PTHREAD  -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs  -std=gnu++17 -o CMakeFiles/cmTC_05013.dir/src.cxx.o -c /home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-tEqYwH/src.cxx
+        [2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs CMakeFiles/cmTC_05013.dir/src.cxx.o -o cmTC_05013   && :
+        FAILED: cmTC_05013 
+        : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs CMakeFiles/cmTC_05013.dir/src.cxx.o -o cmTC_05013   && :
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: CMakeFiles/cmTC_05013.dir/src.cxx.o: in function `main':
+        src.cxx:(.text.startup.main+0x24): undefined reference to `pthread_create'
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.cxx:(.text.startup.main+0x2e): undefined reference to `pthread_detach'
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.cxx:(.text.startup.main+0x38): undefined reference to `pthread_cancel'
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.cxx:(.text.startup.main+0x44): undefined reference to `pthread_join'
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.cxx:(.text.startup.main+0x50): undefined reference to `pthread_atfork'
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindCUDA.cmake:1076 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-KFgxwo"
+      binary: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-KFgxwo"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-KFgxwo'
+        
+        Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_ef99f
+        [1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_ef99f.dir/CheckFunctionExists.cxx.o -c /home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-KFgxwo/CheckFunctionExists.cxx
+        [2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs CMakeFiles/cmTC_ef99f.dir/CheckFunctionExists.cxx.o -o cmTC_ef99f  -lpthreads && :
+        FAILED: cmTC_ef99f 
+        : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs CMakeFiles/cmTC_ef99f.dir/CheckFunctionExists.cxx.o -o cmTC_ef99f  -lpthreads && :
+        /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/../lib/gcc/x86_64-conda-linux-gnu/11.2.0/../../../../x86_64-conda-linux-gnu/bin/ld: cannot find -lpthreads: No such file or directory
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "/home/stu15/s15/pj2196/miniconda3/envs/hpa/share/cmake-4.0/Modules/FindCUDA.cmake:1076 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-sxsklF"
+      binary: "/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-sxsklF"
+    cmakeVariables:
+      CMAKE_CUDA_ARCHITECTURES: "52"
+      CMAKE_CXX_FLAGS: "-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-sxsklF'
+        
+        Run Build Command(s): /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/ninja -v cmTC_c3cc3
+        [1/2] /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++17 -o CMakeFiles/cmTC_c3cc3.dir/CheckFunctionExists.cxx.o -c /home/stu15/s15/pj2196/HPA/final/HPA_Project/build/CMakeFiles/CMakeScratch/TryCompile-sxsklF/CheckFunctionExists.cxx
+        [2/2] : && /home/stu15/s15/pj2196/miniconda3/envs/hpa/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/stu15/s15/pj2196/miniconda3/envs/hpa/include  -I/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/include  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -Wl,-rpath-link,/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/lib  -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib -L/home/stu15/s15/pj2196/miniconda3/envs/hpa/targets/x86_64-linux/lib/stubs CMakeFiles/cmTC_c3cc3.dir/CheckFunctionExists.cxx.o -o cmTC_c3cc3  -lpthread && :
+        
+      exitCode: 0
 ...
