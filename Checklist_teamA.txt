@@ -1,0 +1,62 @@
+Team A Next Steps: Shared Memory Tiling Implementation Roadmap
+
+Phase 1 (Completed) Paras
+    Use vgg16.onnx to extract:
+	•	Input tensor for a chosen Conv2D layer (e.g., features.0)
+	•	That layer’s kernel weights and biases
+	•	Its expected output
+	•	Use this triplet to:
+	•	Validate your baseline CUDA conv kernel
+    Validate output vs PyTorch or ONNXRuntime using test cases in tests/test_conv.cpp.
+Results 
+Max absolute difference: 10.3428
+L2 norm error: 1.36424
+
+Phase 2 Core Tasks
+1. Implement Shared Memory Tiling in cuda_kernels.cu
+	•	Refactor the convolution kernel to:
+	•	Load input tiles into shared memory
+	•	Load filter weights into shared memory
+	•	Each thread computes 1 (or more) output pixel(s)
+	•	Ensure:
+	•	Proper block and thread indexing (e.g., TILE_WIDTH = 16)
+	•	Correct handling of boundary conditions (edges of image)
+	•	Use __syncthreads() after shared memory loads
+
+Results
+
+⸻
+
+🧠 2. Experiment with Tiling Parameters
+	•	Try different TILE_WIDTH sizes: 8, 16, 32
+	•	Measure effect on:
+	•	Shared memory usage
+	•	Register pressure
+	•	Occupancy
+	•	Add compile-time #define TILE_WIDTH for tunable block sizes
+
+⸻
+
+🔍 3. Profile the Optimized Kernel
+
+Use scripts/profile_kernel.sh and Nsight Compute to:
+	•	Compare GFLOPS vs. baseline
+	•	Look at shared memory throughput
+	•	Identify stall reasons (e.g., memory dependency, execution dependency)
+	•	Check warp efficiency and SM utilization
+
+⸻
+
+🧪 4. Validation & Integration
+	•	Ensure tests/test_conv.cpp passes with new tiled kernel
+	•	Output numerical difference (e.g., max abs diff < 1e-4) to validate correctness
+	•	Benchmark with both small (e.g., 112x112) and large (e.g., 224x224) inputs
+
+⸻
+
+📝 5. Document Your Work
+	•	Explanation of tiling strategy
+	•	Performance gains (baseline vs tiled)
+	•	Tuning decisions (e.g., why TILE_WIDTH=16 worked best)
+	•	Add visual aids if possible (e.g., shared memory diagram, profiling screenshots)
+	•	Comment thoroughly in cuda_kernels.cu
