@@ -1,3 +1,0 @@
-/media/preritsm/New Volume/Linux_files/HPA_Project/build/CMakeFiles/hpa_project.dir
-/media/preritsm/New Volume/Linux_files/HPA_Project/build/CMakeFiles/edit_cache.dir
-/media/preritsm/New Volume/Linux_files/HPA_Project/build/CMakeFiles/rebuild_cache.dir
