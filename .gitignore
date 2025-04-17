@@ -1,3 +1,9 @@
-models/vgg16.onnx
-build/vgg16.onnx
-models/vgg16_with_conv0_output.onnx
+# Ignore build artifacts and temporary files
+build/
+*.onnx
+*.o
+*.a
+*.so
+*.log
+*.pyc
+__pycache__/
