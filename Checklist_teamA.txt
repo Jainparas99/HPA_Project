@@ -27,7 +27,7 @@ Results
 
 ⸻
 
-🧠 2. Experiment with Tiling Parameters
+2. Experiment with Tiling Parameters
 	•	Try different TILE_WIDTH sizes: 8, 16, 32
 	•	Measure effect on:
 	•	Shared memory usage
@@ -37,7 +37,7 @@ Results
 
 ⸻
 
-🔍 3. Profile the Optimized Kernel
+ 3. Profile the Optimized Kernel
 
 Use scripts/profile_kernel.sh and Nsight Compute to:
 	•	Compare GFLOPS vs. baseline
@@ -47,14 +47,14 @@ Use scripts/profile_kernel.sh and Nsight Compute to:
 
 ⸻
 
-🧪 4. Validation & Integration
+4. Validation & Integration
 	•	Ensure tests/test_conv.cpp passes with new tiled kernel
 	•	Output numerical difference (e.g., max abs diff < 1e-4) to validate correctness
 	•	Benchmark with both small (e.g., 112x112) and large (e.g., 224x224) inputs
 
 ⸻
 
-📝 5. Document Your Work
+5. Document Your Work
 	•	Explanation of tiling strategy
 	•	Performance gains (baseline vs tiled)
 	•	Tuning decisions (e.g., why TILE_WIDTH=16 worked best)

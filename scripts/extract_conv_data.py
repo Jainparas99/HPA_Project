@@ -10,15 +10,14 @@ sess = ort.InferenceSession(model_path)
 input_name = sess.get_inputs()[0].name
 output_name = sess.get_outputs()[0].name
 
-# --- Create a dummy input ---
 input_tensor = np.random.randn(1, 3, 224, 224).astype(np.float32)
 output_tensor = sess.run([output_name], {input_name: input_tensor})[0]
 
-# --- Save input and output for testing ---
+
 np.save("models/input_tensor.npy", input_tensor)
 np.save("models/expected_output.npy", output_tensor)
 
-# --- Extract weights for the first conv layer (features.0) ---
+
 for initializer in model.graph.initializer:
     if initializer.name == "vgg0_conv0_weight":
         weights = numpy_helper.to_array(initializer)
