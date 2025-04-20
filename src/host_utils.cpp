@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <fstream>
 
 #define CHECK_CUDA(call) \
     { \
@@ -56,6 +57,10 @@ void placeholder_utils_function() {
     std::cout << "\n🔧 Running CUDA Conv2D test on conv1 weights...\n";
 
     // Run tiled kernel and compare with expected output
+    // run_conv2d_naive_test(d_input, d_weight, d_bias, d_output,
+        // expected, N, C, H, W, K, R, S, P, Q);
+    
+    // Run tiled kernel and compare with expected output
     run_conv2d_tiled_test(d_input, d_weight, d_bias, d_output,
                           expected, N, C, H, W, K, R, S, P, Q);
 
@@ -65,6 +70,54 @@ void placeholder_utils_function() {
     cudaFree(d_bias);
     cudaFree(d_output);
 }
+
+// void run_conv2d_naive_test(
+//     float* d_input, float* d_weight, float* d_bias, float* d_output,
+//     const std::vector<float>& expected,
+//     int N, int C, int H, int W, int K, int R, int S, int P, int Q) {
+
+//     std::cout << "\n🧪 Running conv2d_naive...\n";
+
+//     // Time using CUDA events
+//     cudaEvent_t start, stop;
+//     cudaEventCreate(&start);
+//     cudaEventCreate(&stop);
+//     cudaEventRecord(start);
+
+//     launch_conv2d_naive(d_input, d_weight, d_bias, d_output,
+//                         N, C, H, W, K, R, S, P, Q);
+
+//     cudaEventRecord(stop);
+//     cudaEventSynchronize(stop);
+
+//     float elapsed_time_ms;
+//     cudaEventElapsedTime(&elapsed_time_ms, start, stop);
+
+//     // Copy result back to host
+//     size_t output_bytes = N * K * P * Q * sizeof(float);
+//     std::vector<float> output(N * K * P * Q);
+//     cudaMemcpy(output.data(), d_output, output_bytes, cudaMemcpyDeviceToHost);
+
+//     // Compute metrics
+//     float gflops = (2.0f * K * C * R * S * P * Q * N) / (elapsed_time_ms * 1e6f);
+//     float max_diff = 0.0f;
+//     float l2_error = 0.0f;
+//     for (size_t i = 0; i < output.size(); ++i) {
+//         float diff = std::abs(output[i] - expected[i]);
+//         max_diff = std::max(max_diff, diff);
+//         l2_error += diff * diff;
+//     }
+//     l2_error = std::sqrt(l2_error);
+
+//     // Print and log
+//     std::cout << "Execution Time (ms): " << elapsed_time_ms << "\n";
+//     std::cout << "GFLOPS: " << gflops << "\n";
+//     std::cout << "Max absolute difference: " << max_diff << "\n";
+//     std::cout << "L2 norm error: " << l2_error << "\n";
+
+//     write_benchmark_to_file("conv2d_naive", elapsed_time_ms, gflops, max_diff, l2_error);
+// }
+
 
 void run_conv2d_tiled_test(
     float* d_input, float* d_weight, float* d_bias, float* d_output,
@@ -119,8 +172,27 @@ void run_conv2d_tiled_test(
     std::cout << "⏱️  Time: " << milliseconds << " ms\n";
     std::cout << "⚡ GFLOPS: " << gflops << "\n";
     std::cout << "📏 Max abs diff: " << max_diff << "\n";
-    std::cout << "📐 L2 error: " << l2_error << "\n\n";
+    std::cout << "L2 norm error: " << l2_error << std::endl;
+
+    // write_benchmark_to_file("conv2d_tiled", milliseconds, gflops, max_diff, l2_error);
+
 
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
 }
+
+
+// void write_benchmark_to_file(const std::string& kernel_name, float time_ms, float gflops, float max_diff, float l2_error) {
+//     std::ofstream out("profile/benchmark_results.txt", std::ios::app); // append mode
+//     if (out.is_open()) {
+//         out << "Kernel: " << kernel_name << "\n";
+//         out << "Execution Time (ms): " << time_ms << "\n";
+//         out << "GFLOPS: " << gflops << "\n";
+//         out << "Max Absolute Difference: " << max_diff << "\n";
+//         out << "L2 Norm Error: " << l2_error << "\n";
+//         out << "-----------------------------\n";
+//         out.close();
+//     } else {
+//         std::cerr << "⚠️ Unable to write benchmark results.\n";
+//     }
+// }
