@@ -1,2 +1,12 @@
 models/vgg16.onnx
 *.pt
+build*
+external
+*.txt
+*.log
+*detect_*
+build/CMakeFiles/CMakeConfigureLog.yaml
+build/CMakeCache.txt
+cmake_install.cmake
+build/CMakeFiles/CMakeConfigureLog.yaml
+build/CMakeCache.txt
