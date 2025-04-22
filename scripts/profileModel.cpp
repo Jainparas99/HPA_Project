@@ -110,7 +110,7 @@ int main() {
 
     // 2) Build a matching input
     std::cout << "[DEBUG] Creating input tensor" << std::endl;
-    at::Tensor x = torch::randn({1,3,224,224}, torch::TensorOptions().device(device));
+    at::Tensor x = torch::randn({50,3,224,224}, torch::TensorOptions().device(device));
 
     // 3) Profile
     std::cout << "[DEBUG] Calling profileSubmodulesCUDA" << std::endl;
