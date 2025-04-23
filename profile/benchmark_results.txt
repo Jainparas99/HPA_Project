@@ -1,0 +1,6 @@
+Kernel: conv2d_naive
+Execution Time (ms): 0.377856
+GFLOPS: 458.927
+Max Absolute Difference: 10.3428
+L2 Norm Error: 2444.72
+-----------------------------

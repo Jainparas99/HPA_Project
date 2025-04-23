@@ -5,6 +5,8 @@ project(HPA_Project LANGUAGES CXX CUDA)
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -g -G -O0")
+
 
 # Enable/disable optional modules
 option(BUILD_TESTS "Build unit tests" OFF)

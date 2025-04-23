@@ -61,7 +61,7 @@ void launch_conv2d_naive(
 
 //-------------------------------------------------------------------------------------------------------------------------
 
-#define TILE_WIDTH 16
+#define TILE_WIDTH 8
 
 __global__ void conv2d_tiled_kernel(
     const float* __restrict__ input,
@@ -163,20 +163,98 @@ void launch_conv2d_tiled(float* d_input, float* d_weight, float* d_bias, float* 
         size_t shared_mem_size = sizeof(float) * C * (TILE_WIDTH + 2) * (TILE_WIDTH + 2);
         
 
-std::cout << "Shared memory size: " << shared_mem_size << " bytes" << std::endl;
+    std::cout << "Shared memory size: " << shared_mem_size << " bytes" << std::endl;
 
-conv2d_tiled_kernel<<<gridDim, blockDim, shared_mem_size>>>(
-d_input, d_weight, d_bias, d_output,
-N, C, H, W, K, R, S, P, Q
-);
+    conv2d_tiled_kernel<<<gridDim, blockDim, shared_mem_size>>>(
+    d_input, d_weight, d_bias, d_output,
+    N, C, H, W, K, R, S, P, Q
+    );
+    
+    cudaDeviceSynchronize();
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+        std::cerr << "CUDA Sync Error: " << cudaGetErrorString(err) << std::endl;
+    }
 
-cudaError_t err = cudaGetLastError();
-if (err != cudaSuccess)
-std::cerr << "CUDA Launch Error: " << cudaGetErrorString(err) << std::endl;
+    err = cudaGetLastError();
+    if (err != cudaSuccess)
+    std::cerr << "CUDA Launch Error: " << cudaGetErrorString(err) << std::endl;
 
-cudaDeviceSynchronize();
-cudaError_t syncErr = cudaGetLastError();
-if (syncErr != cudaSuccess)
-std::cerr << "CUDA Sync Error: " << cudaGetErrorString(syncErr) << std::endl;
+    cudaDeviceSynchronize();
+    cudaError_t syncErr = cudaGetLastError();
+    if (syncErr != cudaSuccess)
+    std::cerr << "CUDA Sync Error: " << cudaGetErrorString(syncErr) << std::endl;
 }
 
+// -----------------------------------------------------------------------------------------------------------------------------
+
+__global__ void conv2d_tiled_coarsened_kernel(
+    const float* input, const float* weight, const float* bias, float* output,
+    int N, int C, int H, int W,
+    int K, int R, int S,
+    int P, int Q) {
+
+    const int COARSENING = 2;
+    // const int TILE_WIDTH = 8;  // Per block
+
+    int n = blockIdx.z;
+    int k = blockIdx.y;
+
+    int tile_h = blockIdx.x * TILE_WIDTH;
+    int tile_w = threadIdx.y * COARSENING;
+
+    int tx = threadIdx.x;
+    int ty = threadIdx.y;
+
+    int h_out = tile_h + tx * COARSENING;
+    int w_out = tile_w;
+
+    float acc[COARSENING][COARSENING] = {0};
+
+    for (int c = 0; c < C; ++c) {
+        for (int r = 0; r < R; ++r) {
+            for (int s = 0; s < S; ++s) {
+                for (int i = 0; i < COARSENING; ++i) {
+                    for (int j = 0; j < COARSENING; ++j) {
+                        int h_in = h_out + i + r - 1;  // padding=1
+                        int w_in = w_out + j + s - 1;
+                        if (h_in >= 0 && h_in < H && w_in >= 0 && w_in < W) {
+                            int input_idx = ((n * C + c) * H + h_in) * W + w_in;
+                            int weight_idx = ((k * C + c) * R + r) * S + s;
+                            acc[i][j] += input[input_idx] * weight[weight_idx];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    for (int i = 0; i < COARSENING; ++i) {
+        for (int j = 0; j < COARSENING; ++j) {
+            int h = h_out + i;
+            int w = w_out + j;
+            if (h < P && w < Q) {
+                int out_idx = ((n * K + k) * P + h) * Q + w;
+                output[out_idx] = acc[i][j] + bias[k];
+            }
+        }
+    }
+}
+
+void launch_conv2d_tiled_coarsened(
+    float* input, float* weight, float* bias, float* output,
+    int N, int C, int H, int W,
+    int K, int R, int S,
+    int P, int Q) {
+
+    const int COARSENING = 2;
+    // const int TILE_WIDTH = 8;  // Block size
+
+    dim3 blockDim(TILE_WIDTH / COARSENING, TILE_WIDTH / COARSENING);
+    dim3 gridDim((P + TILE_WIDTH - 1) / TILE_WIDTH, K, N);
+
+    conv2d_tiled_coarsened_kernel<<<gridDim, blockDim>>>(
+        input, weight, bias, output, N, C, H, W, K, R, S, P, Q);
+
+    cudaDeviceSynchronize();
+}

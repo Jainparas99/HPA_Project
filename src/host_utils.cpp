@@ -15,110 +15,55 @@
             exit(EXIT_FAILURE); \
         } \
     }
-void run_conv2d_tiled_test(
-        float* d_input, float* d_weight, float* d_bias, float* d_output,
-        const std::vector<float>& expected,
-        int N, int C, int H, int W, int K, int R, int S, int P, int Q);
-    
-void placeholder_utils_function() {
-    std::cout << "\nHPA Project - CUDA VGG16 Convolution Testing\n" << std::endl;
 
-    // Load input, weights, bias, and expected output from npy
-    auto input_np = cnpy::npy_load("models/input_tensor.npy");
-    auto weight_np = cnpy::npy_load("models/conv1_weights.npy");
-    auto bias_np = cnpy::npy_load("models/conv1_bias.npy");
-    auto expected_np = cnpy::npy_load("models/expected_output.npy");
+void run_conv2d_naive_test(
+    float* d_input, float* d_weight, float* d_bias, float* d_output,
+    const std::vector<float>& expected,
+    int N, int C, int H, int W, int K, int R, int S, int P, int Q) {
 
-    std::vector<float> input = input_np.as_vec<float>();
-    std::vector<float> weight = weight_np.as_vec<float>();
-    std::vector<float> bias = bias_np.as_vec<float>();
-    std::vector<float> expected = expected_np.as_vec<float>();
+    std::cout << "\n🧪 Running conv2d_naive...\n";
 
-    // VGG16 conv1 shape (as an example)
-    int N = 1, C = 3, H = 224, W = 224;
-    int K = 64, R = 3, S = 3;
-    int P = 224, Q = 224;  // Assuming padding=1, stride=1
+    // Time using CUDA events
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    cudaEventRecord(start);
 
-    size_t input_bytes = input.size() * sizeof(float);
-    size_t weight_bytes = weight.size() * sizeof(float);
-    size_t bias_bytes = bias.size() * sizeof(float);
-    size_t output_bytes = expected.size() * sizeof(float);
+    launch_conv2d_naive(d_input, d_weight, d_bias, d_output,
+                        N, C, H, W, K, R, S, P, Q);
 
-    float *d_input, *d_weight, *d_bias, *d_output;
-    CHECK_CUDA(cudaMalloc(&d_input, input_bytes));
-    CHECK_CUDA(cudaMalloc(&d_weight, weight_bytes));
-    CHECK_CUDA(cudaMalloc(&d_bias, bias_bytes));
-    CHECK_CUDA(cudaMalloc(&d_output, output_bytes));
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
 
-    CHECK_CUDA(cudaMemcpy(d_input, input.data(), input_bytes, cudaMemcpyHostToDevice));
-    CHECK_CUDA(cudaMemcpy(d_weight, weight.data(), weight_bytes, cudaMemcpyHostToDevice));
-    CHECK_CUDA(cudaMemcpy(d_bias, bias.data(), bias_bytes, cudaMemcpyHostToDevice));
+    float elapsed_time_ms;
+    cudaEventElapsedTime(&elapsed_time_ms, start, stop);
 
-    std::cout << "\n🔧 Running CUDA Conv2D test on conv1 weights...\n";
+    // Copy result back to host
+    size_t output_bytes = N * K * P * Q * sizeof(float);
+    std::vector<float> output(N * K * P * Q);
+    cudaMemcpy(output.data(), d_output, output_bytes, cudaMemcpyDeviceToHost);
 
-    // Run tiled kernel and compare with expected output
-    // run_conv2d_naive_test(d_input, d_weight, d_bias, d_output,
-        // expected, N, C, H, W, K, R, S, P, Q);
-    
-    // Run tiled kernel and compare with expected output
-    run_conv2d_tiled_test(d_input, d_weight, d_bias, d_output,
-                          expected, N, C, H, W, K, R, S, P, Q);
+    // Compute metrics
+    float gflops = (2.0f * K * C * R * S * P * Q * N) / (elapsed_time_ms * 1e6f);
+    float max_diff = 0.0f;
+    float l2_error = 0.0f;
+    for (size_t i = 0; i < output.size(); ++i) {
+        float diff = std::abs(output[i] - expected[i]);
+        max_diff = std::max(max_diff, diff);
+        l2_error += diff * diff;
+    }
+    l2_error = std::sqrt(l2_error);
 
-    // Free device memory
-    cudaFree(d_input);
-    cudaFree(d_weight);
-    cudaFree(d_bias);
-    cudaFree(d_output);
+    // Print and log
+    std::cout << "Execution Time (ms): " << elapsed_time_ms << "\n";
+    std::cout << "GFLOPS: " << gflops << "\n";
+    std::cout << "Max absolute difference: " << max_diff << "\n";
+    std::cout << "L2 norm error: " << l2_error << "\n";
+
+    write_benchmark_to_file("conv2d_naive", elapsed_time_ms, gflops, max_diff, l2_error);
 }
-
-// void run_conv2d_naive_test(
-//     float* d_input, float* d_weight, float* d_bias, float* d_output,
-//     const std::vector<float>& expected,
-//     int N, int C, int H, int W, int K, int R, int S, int P, int Q) {
-
-//     std::cout << "\n🧪 Running conv2d_naive...\n";
-
-//     // Time using CUDA events
-//     cudaEvent_t start, stop;
-//     cudaEventCreate(&start);
-//     cudaEventCreate(&stop);
-//     cudaEventRecord(start);
-
-//     launch_conv2d_naive(d_input, d_weight, d_bias, d_output,
-//                         N, C, H, W, K, R, S, P, Q);
-
-//     cudaEventRecord(stop);
-//     cudaEventSynchronize(stop);
-
-//     float elapsed_time_ms;
-//     cudaEventElapsedTime(&elapsed_time_ms, start, stop);
-
-//     // Copy result back to host
-//     size_t output_bytes = N * K * P * Q * sizeof(float);
-//     std::vector<float> output(N * K * P * Q);
-//     cudaMemcpy(output.data(), d_output, output_bytes, cudaMemcpyDeviceToHost);
-
-//     // Compute metrics
-//     float gflops = (2.0f * K * C * R * S * P * Q * N) / (elapsed_time_ms * 1e6f);
-//     float max_diff = 0.0f;
-//     float l2_error = 0.0f;
-//     for (size_t i = 0; i < output.size(); ++i) {
-//         float diff = std::abs(output[i] - expected[i]);
-//         max_diff = std::max(max_diff, diff);
-//         l2_error += diff * diff;
-//     }
-//     l2_error = std::sqrt(l2_error);
-
-//     // Print and log
-//     std::cout << "Execution Time (ms): " << elapsed_time_ms << "\n";
-//     std::cout << "GFLOPS: " << gflops << "\n";
-//     std::cout << "Max absolute difference: " << max_diff << "\n";
-//     std::cout << "L2 norm error: " << l2_error << "\n";
-
-//     write_benchmark_to_file("conv2d_naive", elapsed_time_ms, gflops, max_diff, l2_error);
-// }
-
-
+    
+    
 void run_conv2d_tiled_test(
     float* d_input, float* d_weight, float* d_bias, float* d_output,
     const std::vector<float>& expected,
@@ -130,9 +75,9 @@ void run_conv2d_tiled_test(
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
     std::cout << "Launching with:\n"
-          << "N=" << N << " C=" << C << " H=" << H << " W=" << W << "\n"
-          << "K=" << K << " R=" << R << " S=" << S << " P=" << P << " Q=" << Q << "\n"
-          << "Output size: " << P*Q*K*N << " elements\n";
+            << "N=" << N << " C=" << C << " H=" << H << " W=" << W << "\n"
+            << "K=" << K << " R=" << R << " S=" << S << " P=" << P << " Q=" << Q << "\n"
+            << "Output size: " << P*Q*K*N << " elements\n";
 
     cudaEventRecord(start);
     launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
@@ -182,17 +127,140 @@ void run_conv2d_tiled_test(
 }
 
 
-// void write_benchmark_to_file(const std::string& kernel_name, float time_ms, float gflops, float max_diff, float l2_error) {
-//     std::ofstream out("profile/benchmark_results.txt", std::ios::app); // append mode
-//     if (out.is_open()) {
-//         out << "Kernel: " << kernel_name << "\n";
-//         out << "Execution Time (ms): " << time_ms << "\n";
-//         out << "GFLOPS: " << gflops << "\n";
-//         out << "Max Absolute Difference: " << max_diff << "\n";
-//         out << "L2 Norm Error: " << l2_error << "\n";
-//         out << "-----------------------------\n";
-//         out.close();
-//     } else {
-//         std::cerr << "⚠️ Unable to write benchmark results.\n";
-//     }
-// }
+void write_benchmark_to_file(const std::string& kernel_name, float time_ms, float gflops, float max_diff, float l2_error) {
+    std::ofstream out("profile/benchmark_results.txt", std::ios::app); // append mode
+    if (out.is_open()) {
+        out << "Kernel: " << kernel_name << "\n";
+        out << "Execution Time (ms): " << time_ms << "\n";
+        out << "GFLOPS: " << gflops << "\n";
+        out << "Max Absolute Difference: " << max_diff << "\n";
+        out << "L2 Norm Error: " << l2_error << "\n";
+        out << "-----------------------------\n";
+        out.close();
+    } else {
+        std::cerr << "⚠️ Unable to write benchmark results.\n";
+    }
+}
+
+
+void run_conv2d_tiled_coarsened_test(
+    float* d_input, float* d_weight, float* d_bias, float* d_output,
+    int N, int C, int H, int W,
+    int K, int R, int S,
+    int P, int Q,
+    const std::vector<float>& expected_output)
+{
+    std::cout << "\n🧪 Running conv2d_tiled_coarsened...\n";
+
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+
+    cudaEventRecord(start);
+    launch_conv2d_tiled_coarsened(d_input, d_weight, d_bias, d_output,
+                                   N, C, H, W, K, R, S, P, Q);
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+
+    float elapsed_ms = 0;
+    cudaEventElapsedTime(&elapsed_ms, start, stop);
+    std::cout << "Execution Time: " << elapsed_ms << " ms\n";
+
+    std::vector<float> host_output(N * K * P * Q);
+    cudaMemcpy(host_output.data(), d_output,
+               N * K * P * Q * sizeof(float), cudaMemcpyDeviceToHost);
+
+    float max_diff = 0;
+    float l2_sum = 0;
+    for (int i = 0; i < host_output.size(); ++i) {
+        float diff = host_output[i] - expected_output[i];
+        max_diff = std::max(max_diff, std::abs(diff));
+        l2_sum += diff * diff;
+    }
+
+    float l2_norm = std::sqrt(l2_sum);
+    std::cout << "Max absolute difference: " << max_diff << "\n";
+    std::cout << "L2 norm error: " << l2_norm << "\n";
+
+    // Optional: log to file
+    std::ofstream file("profile/conv2d_tiled_coarsened.txt");
+    file << "Kernel: conv2d_tiled_coarsened\n";
+    file << "Execution Time: " << elapsed_ms << " ms\n";
+    file << "Max Difference: " << max_diff << "\n";
+    file << "L2 Norm Error: " << l2_norm << "\n";
+    file.close();
+
+    cudaEventDestroy(start);
+    cudaEventDestroy(stop);
+}
+        
+        
+    
+void placeholder_utils_function() {
+    std::cout << "\nHPA Project - CUDA VGG16 Convolution Testing\n" << std::endl;
+
+    // Load input, weights, bias, and expected output from npy
+    auto input_np = cnpy::npy_load("models/input_tensor.npy");
+    auto weight_np = cnpy::npy_load("models/conv1_weights.npy");
+    auto bias_np = cnpy::npy_load("models/conv1_bias.npy");
+    auto conv1_output_np = cnpy::npy_load("models/conv1_output.npy");
+    // auto expected_np = cnpy::npy_load("models/expected_output.npy");
+
+    std::vector<float> input = input_np.as_vec<float>();
+    std::vector<float> weight = weight_np.as_vec<float>();
+    std::vector<float> bias = bias_np.as_vec<float>();
+    std::vector<float> conv1_expected_output = conv1_output_np.as_vec<float>();
+    //std::vector<float> expected = expected_np.as_vec<float>();
+
+//     float* input = input_np.data<float>();      // [1, 3, 224, 224]
+// -    float* weight = weight_np.data<float>();    // [64, 3, 3, 3]
+// -    float* bias = bias_np.data<float>();        // [64]z
+// -    float* expected = expected_np.data<float>();
+
+    // VGG16 conv1 shape (as an example)
+    int N = 1, C = 3, H = 224, W = 224;
+    int K = 64, R = 3, S = 3;
+    int P = 224, Q = 224;  // Assuming padding=1, stride=1
+
+    std::cout << "Input size: " << input.size() << std::endl;
+    std::cout << "Weight size: " << weight.size() << std::endl;
+    std::cout << "Bias size: " << bias.size() << std::endl;
+    std::cout << "Expected output size: " << conv1_expected_output.size() << std::endl;
+
+    size_t input_bytes = input.size() * sizeof(float);
+    size_t weight_bytes = weight.size() * sizeof(float);
+    size_t bias_bytes = bias.size() * sizeof(float);
+    size_t output_bytes = conv1_expected_output.size() * sizeof(float);
+
+    float *d_input, *d_weight, *d_bias, *d_output;
+    CHECK_CUDA(cudaMalloc(&d_input, input_bytes));
+    CHECK_CUDA(cudaMalloc(&d_weight, weight_bytes));
+    CHECK_CUDA(cudaMalloc(&d_bias, bias_bytes));
+    CHECK_CUDA(cudaMalloc(&d_output, output_bytes));
+
+    CHECK_CUDA(cudaMemcpy(d_input, input.data(), input_bytes, cudaMemcpyHostToDevice));
+    CHECK_CUDA(cudaMemcpy(d_weight, weight.data(), weight_bytes, cudaMemcpyHostToDevice));
+    CHECK_CUDA(cudaMemcpy(d_bias, bias.data(), bias_bytes, cudaMemcpyHostToDevice));
+
+    std::cout << "\n🔧 Running CUDA Conv2D test on conv1 weights...\n";
+
+    // Run tiled kernel and compare with expected output
+    run_conv2d_naive_test(d_input, d_weight, d_bias, d_output,
+        conv1_expected_output, N, C, H, W, K, R, S, P, Q);
+    
+    // Run tiled kernel and compare with expected output
+    run_conv2d_tiled_test(d_input, d_weight, d_bias, d_output,
+                          conv1_expected_output, N, C, H, W, K, R, S, P, Q);
+
+    run_conv2d_tiled_coarsened_test(
+        d_input, d_weight, d_bias, d_output,
+        N, C, H, W, K, R, S, P, Q, conv1_expected_output
+    );
+
+    // Free device memory
+    cudaFree(d_input);
+    cudaFree(d_weight);
+    cudaFree(d_bias);
+    cudaFree(d_output);
+}
+
