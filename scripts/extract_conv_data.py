@@ -20,15 +20,21 @@ np.save("models/expected_output.npy", output_tensor)
 
 # --- Extract weights for the first conv layer (features.0) ---
 for initializer in model.graph.initializer:
-    if initializer.name == "vgg0_conv0_weight":
-        weights = numpy_helper.to_array(initializer)
-        np.save("models/conv1_weights.npy", weights)
-    elif initializer.name == "vgg0_conv0_bias":
-        bias = numpy_helper.to_array(initializer)
-        np.save("models/conv1_bias.npy", bias)
+    name = initializer.name
+    # We're looking for conv layer weights and biases
+    if "vgg0_conv" in name:
+        data = numpy_helper.to_array(initializer)
+
+        if "weight" in name:
+            layer_num = name.split("vgg0_conv")[1].split("_")[0]
+            np.save(f"models/conv{layer_num}_weights.npy", data)
+            print(f"Saved weights for conv{layer_num}: {data.shape}")
+
+        elif "bias" in name:
+            layer_num = name.split("vgg0_conv")[1].split("_")[0]
+            np.save(f"models/conv{layer_num}_bias.npy", data)
+            print(f"Saved bias for conv{layer_num}: {data.shape}")
 
 print(f"Export complete! Shapes:")
 print(f"Input: {input_tensor.shape}")
-print(f"Weights: {weights.shape}")
-print(f"Bias: {bias.shape}")
 print(f"Output: {output_tensor.shape}")

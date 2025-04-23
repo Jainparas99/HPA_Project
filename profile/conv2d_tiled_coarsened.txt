@@ -1,4 +1,4 @@
 Kernel: conv2d_tiled_coarsened
-Execution Time: 0.568576 ms
-Max Difference: 2.86102e-06
-L2 Norm Error: 0.00030896
+Execution Time: 2.33808 ms
+Max Difference: 12.1631
+L2 Norm Error: 2618.67

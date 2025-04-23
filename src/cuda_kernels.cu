@@ -26,7 +26,7 @@ __global__ void conv2d_naive_kernel(
     for (int c = 0; c < C; ++c) {
         for (int r = 0; r < R; ++r) {
             for (int s = 0; s < S; ++s) {
-                int h_in = h_out + r - 1;  // padding = 1
+                int h_in = h_out + r - 1; 
                 int w_in = w_out + s - 1;
 
                 if (h_in >= 0 && h_in < H && w_in >= 0 && w_in < W) {
@@ -58,8 +58,6 @@ void launch_conv2d_naive(
 
     cudaDeviceSynchronize();  // Ensure kernel is done before returning
 }
-
-//-------------------------------------------------------------------------------------------------------------------------
 
 #define TILE_WIDTH 8
 
@@ -186,8 +184,6 @@ void launch_conv2d_tiled(float* d_input, float* d_weight, float* d_bias, float* 
     std::cerr << "CUDA Sync Error: " << cudaGetErrorString(syncErr) << std::endl;
 }
 
-// -----------------------------------------------------------------------------------------------------------------------------
-
 __global__ void conv2d_tiled_coarsened_kernel(
     const float* input, const float* weight, const float* bias, float* output,
     int N, int C, int H, int W,
@@ -257,4 +253,57 @@ void launch_conv2d_tiled_coarsened(
         input, weight, bias, output, N, C, H, W, K, R, S, P, Q);
 
     cudaDeviceSynchronize();
+}
+// Safe 
+__global__ void conv2d_tiled_safe(
+    const float* __restrict__ input,
+    const float* __restrict__ weights,
+    const float* __restrict__ bias,
+    float* output,
+    int N, int C, int H, int W,
+    int K, int R, int S, int P, int Q
+) {
+    int n = blockIdx.z;
+    int k = blockIdx.y;
+    int p = blockIdx.x * blockDim.x + threadIdx.x;
+    int q = threadIdx.y;
+
+    if (p >= P || q >= Q) return;
+
+    float acc = bias[k];
+
+    for (int c = 0; c < C; ++c) {
+        for (int r = 0; r < R; ++r) {
+            for (int s = 0; s < S; ++s) {
+                int h_in = p + r - 1;
+                int w_in = q + s - 1;
+                if (h_in >= 0 && h_in < H && w_in >= 0 && w_in < W) {
+                    float val = input[((n * C + c) * H + h_in) * W + w_in];
+                    float w = weights[((k * C + c) * R + r) * S + s];
+                    acc += val * w;
+                }
+            }
+        }
+    }
+
+    output[((n * K + k) * P + p) * Q + q] = acc;
+}
+
+void launch_conv2d_tiled_safe(
+    float* input, float* weight, float* bias, float* output,
+    int N, int C, int H, int W,
+    int K, int R, int S,
+    int P, int Q) {
+
+    dim3 blockDim(16, 16);
+    dim3 gridDim((P + 15) / 16, K, N);
+    size_t shmem_size = 0;
+
+    conv2d_tiled_safe<<<gridDim, blockDim, shmem_size>>>(
+        input, weight, bias, output, N, C, H, W, K, R, S, P, Q);
+
+    cudaError_t err = cudaGetLastError();
+    if (err != cudaSuccess) {
+        std::cerr << "Kernel launch failed: " << cudaGetErrorString(err) << std::endl;
+    }
 }

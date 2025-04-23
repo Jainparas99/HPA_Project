@@ -17,3 +17,13 @@ void launch_conv2d_tiled_coarsened(
     int N, int C, int H, int W,
     int K, int R, int S,
     int P, int Q);
+
+void run_vgg16_conv_layers(float* input, float** weights, float** biases, float* output,
+                           int N, int H, int W);
+
+void launch_conv2d_tiled_safe(
+    float* input, float* weight, float* bias, float* output,
+    int N, int C, int H, int W,
+    int K, int R, int S,
+    int P, int Q);
+                           

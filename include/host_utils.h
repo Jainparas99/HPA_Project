@@ -42,3 +42,5 @@ void write_benchmark_to_file(
     float max_diff,
     float l2_error
 );
+
+void load_all_conv_weights_biases(float**& d_weights, float**& d_biases, int num_layers);
