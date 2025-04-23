@@ -1,0 +1,60 @@
+VGG16 Optimization Project
+Loading VGG16 ONNX model...
+Model loaded successfully!
+Inputs: 1
+Outputs: 1
+Input name: data
+Output name: vgg0_dense2_fwd
+
+=== Testing FC Layer Implementation ===
+Testing FC layer correctness...
+Mismatch at index 18: 45.1598 vs 45.1595
+FC layer implementation FAILED correctness test!
+Testing FC layer correctness...
+Mismatch at index 955: 57.3048 vs 57.3047
+FC layer implementation FAILED correctness test!
+Testing FC layer correctness...
+Mismatch at index 299: 32.4014 vs 32.4015
+FC layer implementation FAILED correctness test!
+
+=== FC Layer Performance Benchmarks ===
+Measuring FC layer performance...
+FC Layer (1x25088 -> 1x4096):
+  Average time: 61.3088 ms over 10 iterations
+  Throughput: 3.35236 GFLOPS
+Measuring FC layer performance...
+FC Layer (1x4096 -> 1x4096):
+  Average time: 10.3734 ms over 10 iterations
+  Throughput: 3.23544 GFLOPS
+Measuring FC layer performance...
+FC Layer (1x4096 -> 1x1000):
+  Average time: 3.19809 ms over 10 iterations
+  Throughput: 2.56216 GFLOPS
+
+=== FC Layer Batch Size Scaling ===
+Batch size: 1
+Measuring FC layer performance...
+FC Layer (1x25088 -> 1x4096):
+  Average time: 57.7722 ms over 5 iterations
+  Throughput: 3.55758 GFLOPS
+Batch size: 2
+Measuring FC layer performance...
+FC Layer (2x25088 -> 2x4096):
+  Average time: 59.4773 ms over 5 iterations
+  Throughput: 6.91118 GFLOPS
+Batch size: 4
+Measuring FC layer performance...
+FC Layer (4x25088 -> 4x4096):
+  Average time: 59.0276 ms over 5 iterations
+  Throughput: 13.9277 GFLOPS
+Batch size: 8
+Measuring FC layer performance...
+FC Layer (8x25088 -> 8x4096):
+  Average time: 59.0409 ms over 5 iterations
+  Throughput: 27.8491 GFLOPS
+Batch size: 16
+Measuring FC layer performance...
+FC Layer (16x25088 -> 16x4096):
+  Average time: 58.1169 ms over 5 iterations
+  Throughput: 56.5836 GFLOPS
+Testing completed successfully!

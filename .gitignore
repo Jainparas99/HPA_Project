@@ -1,1 +1,18 @@
-models/vgg16.onnx
+# Build directories
+build/
+out/
+
+# Visual Studio files
+*.sln
+*.vcxproj*
+*.suo
+*.user
+[Dd]ebug/
+[Rr]elease/
+x64/
+ipch/
+.vs/
+
+# Other
+*.log
+*.tmp

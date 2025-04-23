@@ -1,0 +1,184 @@
+VGG16 Optimization Project
+Loading VGG16 ONNX model...
+Model loaded successfully!
+Inputs: 1
+Outputs: 1
+Input name: data
+Output name: vgg0_dense2_fwd
+
+=== Testing FC Layer Implementation ===
+Testing FC layer correctness...
+CPU implementation:
+  Time: 96.2607 ms
+  Performance: 2.13513 GFLOPS
+GPU implementation:
+  Time: 155.821 ms
+  Performance: 1.31901 GFLOPS
+  Speedup (CPU/GPU): 0.617764x
+FC layer implementation PASSED correctness test!
+Testing FC layer correctness...
+CPU implementation:
+  Time: 14.7365 ms
+  Performance: 2.27752 GFLOPS
+GPU implementation:
+  Time: 14.7895 ms
+  Performance: 2.26935 GFLOPS
+  Speedup (CPU/GPU): 0.996414x
+FC layer implementation PASSED correctness test!
+Testing FC layer correctness...
+CPU implementation:
+  Time: 4.6376 ms
+  Performance: 1.76686 GFLOPS
+GPU implementation:
+  Time: 4.91338 ms
+  Performance: 1.66769 GFLOPS
+  Speedup (CPU/GPU): 0.943872x
+FC layer implementation PASSED correctness test!
+
+=== FC Layer Performance Benchmarks ===
+Measuring FC layer performance...
+FC Layer (1x25088 -> 1x4096):
+  Average time: 80.5107 ms over 10 iterations
+  Throughput: 2.55282 GFLOPS
+Measuring FC layer performance...
+FC Layer (1x4096 -> 1x4096):
+  Average time: 13.9689 ms over 10 iterations
+  Throughput: 2.40267 GFLOPS
+Measuring FC layer performance...
+FC Layer (1x4096 -> 1x1000):
+  Average time: 4.17986 ms over 10 iterations
+  Throughput: 1.96035 GFLOPS
+
+=== FC Layer Batch Size Scaling ===
+Batch size: 1
+Measuring FC layer performance...
+FC Layer (1x25088 -> 1x4096):
+  Average time: 81.0377 ms over 5 iterations
+  Throughput: 2.53622 GFLOPS
+Batch size: 2
+Measuring FC layer performance...
+FC Layer (2x25088 -> 2x4096):
+  Average time: 79.9206 ms over 5 iterations
+  Throughput: 5.14333 GFLOPS
+Batch size: 4
+Measuring FC layer performance...
+FC Layer (4x25088 -> 4x4096):
+  Average time: 80.6057 ms over 5 iterations
+  Throughput: 10.1992 GFLOPS
+Batch size: 8
+Measuring FC layer performance...
+FC Layer (8x25088 -> 8x4096):
+  Average time: 81.2715 ms over 5 iterations
+  Throughput: 20.2314 GFLOPS
+Batch size: 16
+Measuring FC layer performance...
+FC Layer (16x25088 -> 16x4096):
+  Average time: 79.2543 ms over 5 iterations
+  Throughput: 41.4926 GFLOPS
+
+=== CGMA Analysis for VGG16 FC Layers ===
+
+=== CGMA Analysis for FC Layer ===
+Layer size: 1x25088 -> 1x4096
+Total arithmetic operations: 205529088
+
+1. Standard cuBLAS implementation:
+  Global memory accesses: 102793728 elements (411.175 MB)
+  CGMA ratio: 1.99943 operations per memory access
+
+2. Naive custom implementation:
+  Global memory accesses: 205529088 elements (822.116 MB)
+  CGMA ratio: 1 operations per memory access
+
+3. Tiled implementation with shared memory:
+  Global memory accesses: 102793728 elements (411.175 MB)
+  CGMA ratio: 1.99943 operations per memory access
+
+Theoretical analysis:
+  Peak FP32 performance: 29.7677 TFLOPS
+  Memory bandwidth: 760 GB/s
+  Required CGMA to be compute-bound: 156.672
+
+Implementation characteristics:
+  Standard cuBLAS: memory-bound
+  Naive custom: memory-bound
+  Tiled shared memory: memory-bound
+
+=== CGMA Analysis for FC Layer ===
+Layer size: 1x4096 -> 1x4096
+Total arithmetic operations: 33562624
+
+1. Standard cuBLAS implementation:
+  Global memory accesses: 16789504 elements (67.158 MB)
+  CGMA ratio: 1.99902 operations per memory access
+
+2. Naive custom implementation:
+  Global memory accesses: 33562624 elements (134.25 MB)
+  CGMA ratio: 1 operations per memory access
+
+3. Tiled implementation with shared memory:
+  Global memory accesses: 16789504 elements (67.158 MB)
+  CGMA ratio: 1.99902 operations per memory access
+
+Theoretical analysis:
+  Peak FP32 performance: 29.7677 TFLOPS
+  Memory bandwidth: 760 GB/s
+  Required CGMA to be compute-bound: 156.672
+
+Implementation characteristics:
+  Standard cuBLAS: memory-bound
+  Naive custom: memory-bound
+  Tiled shared memory: memory-bound
+
+=== CGMA Analysis for FC Layer ===
+Layer size: 1x4096 -> 1x1000
+Total arithmetic operations: 8194000
+
+1. Standard cuBLAS implementation:
+  Global memory accesses: 4102096 elements (16.4084 MB)
+  CGMA ratio: 1.99752 operations per memory access
+
+2. Naive custom implementation:
+  Global memory accesses: 8194000 elements (32.776 MB)
+  CGMA ratio: 1 operations per memory access
+
+3. Tiled implementation with shared memory:
+  Global memory accesses: 4102096 elements (16.4084 MB)
+  CGMA ratio: 1.99752 operations per memory access
+
+Theoretical analysis:
+  Peak FP32 performance: 29.7677 TFLOPS
+  Memory bandwidth: 760 GB/s
+  Required CGMA to be compute-bound: 156.672
+
+Implementation characteristics:
+  Standard cuBLAS: memory-bound
+  Naive custom: memory-bound
+  Tiled shared memory: memory-bound
+
+=== Running VGG16 Model Prediction (CPU) ===
+Input shape: 1x3x224x224
+Output shape: 1x1000
+Inference time: 310.183 ms
+Note: ImageNet class labels file not found. Using class indices.
+Predictions for batch item 0:
+  Class 361: 3.9698
+  Class 818: 3.8849
+  Class 280: 3.4969
+  Class 362: 3.1577
+  Class 852: 3.1284
+
+
+=== Running VGG16 Model Prediction (GPU) ===
+Input shape: 1x3x224x224
+Output shape: 1x1000
+Inference time: 296.1674 ms
+Note: ImageNet class labels file not found. Using class indices.
+Predictions for batch item 0:
+  Class 818: 3.6249
+  Class 34: 3.4755
+  Class 361: 3.2207
+  Class 811: 2.7153
+  Class 607: 2.7058
+
+Testing completed successfully!
