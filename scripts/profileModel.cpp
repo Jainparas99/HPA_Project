@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <dlfcn.h>
+#include "common.h"
 
 // Helper to check CUDA calls
 #define CUDA_CHECK(call)                                                   \
@@ -91,36 +93,60 @@ profileSubmodulesCUDA(torch::jit::Module& module,
 }
 
 int main() {
-    std::cout << "[DEBUG] Starting main" << std::endl;
-    // 0) Pick GPU
-    int device_id = 0;  // adjust as needed
-    std::cout << "[DEBUG] Checking CUDA availability" << std::endl;
+    // 1) Load the custom‐op library
+    void* h = dlopen("libhpc.so", RTLD_NOW | RTLD_GLOBAL);
+    if (!h) {
+        std::cerr << "dlopen(libhpc.so) failed: " << dlerror() << "\n";
+        return -1;
+    }
+    std::cout << "[DEBUG] Starting Profiling \n";
+
+    int device_id = 0;
     if (!torch::cuda::is_available()) {
-        std::cerr << "[ERROR] CUDA not available" << std::endl;
+        std::cerr << "[ERROR] CUDA not available\n";
         return 1;
     }
 
-    // 1) Load & move model
     torch::Device device(torch::kCUDA, device_id);
-    std::cout << "[DEBUG] Loading model" << std::endl;
-    auto module = torch::jit::load("models/pytorch_resnet50.pt");
-    std::cout << "[DEBUG] Moving model to device" << std::endl;
-    module.to(device);
-    module.eval();
 
-    // 2) Build a matching input
-    std::cout << "[DEBUG] Creating input tensor" << std::endl;
-    at::Tensor x = torch::randn({50,3,224,224}, torch::TensorOptions().device(device));
+    // ✅ Load model paths from CSV
+    std::string csv_path = "config/models.csv";
+    auto csv_data = read_csv(csv_path);
 
-    // 3) Profile
-    std::cout << "[DEBUG] Calling profileSubmodulesCUDA" << std::endl;
-    auto results = profileSubmodulesCUDA(module, x, device_id);
-
-    // 4) Print
-    std::cout << "Layer‑wise GPU times:" << std::endl;
-    for (auto& [layer, ms] : results) {
-        std::cout << "  " << layer << ": " << ms << " ms" << std::endl;
+    if (csv_data.empty()) {
+        std::cerr << "[ERROR] No models found in CSV.\n";
+        return 1;
     }
-    std::cout << "[DEBUG] Finished main" << std::endl;
+
+    for (const auto& row : csv_data) {
+        if (row.empty()) continue;
+        const std::string& model_path = row[0];
+        std::cout << "\n" << std::string(90, '*') << "\n";
+        std::cout << "\n[DEBUG] === Profiling: " << model_path << " ===\n";
+        std::cout << "\n" << std::string(90, '*') << "\n";
+
+        torch::jit::Module module;
+        try {
+            std::cout << "[DEBUG] Loading model: " << model_path << std::endl;
+            module = torch::jit::load(model_path);
+        } catch (const c10::Error& e) {
+            std::cerr << "[ERROR] Failed to load model: " << model_path << "\n" << e.what() << std::endl;
+            continue;
+        }
+
+        module.to(device);
+        module.eval();
+
+        at::Tensor x = torch::randn({50, 3, 224, 224}, torch::TensorOptions().device(device));
+
+        auto results = profileSubmodulesCUDA(module, x, device_id);
+
+        std::cout << "Layer‑wise GPU times for " << model_path << ":\n";
+        for (auto& [layer, ms] : results) {
+            std::cout << "  " << layer << ": " << ms << " ms\n";
+        }
+    }
+
+    std::cout << "\n[DEBUG] Finished profiling all models.\n";
     return 0;
 }

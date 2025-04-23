@@ -64,6 +64,7 @@ target_link_libraries(profiling PRIVATE
 # ------------------------------------------------------------------
 add_executable(inference_cpp
     scripts/modelInference.cpp
+    scripts/utils.cpp
 )
 target_include_directories(inference_cpp PRIVATE
     ${TORCH_INCLUDE_DIRS}

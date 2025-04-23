@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cstdlib> 
 #include <ctime>  
+#include <fstream>
 
 // Definition of the helper
 std::string shapeToString(const c10::IntArrayRef& sizes) {
@@ -18,6 +19,8 @@ std::string shapeToString(const c10::IntArrayRef& sizes) {
     oss << "]";
     return oss.str();
 }
+
+
 torch::Tensor make_random_image_batch_tensor(
     int batch_size,
     int channels,
@@ -75,4 +78,24 @@ torch::Tensor make_random_image_batch_tensor(
     }
 
     return t_cpu;
+}
+
+std::vector<std::vector<std::string>> read_csv(const std::string& filename) {
+    std::ifstream file(filename);
+    std::vector<std::vector<std::string>> data;
+    std::string line;
+
+    while (std::getline(file, line)) {
+        std::vector<std::string> row;
+        std::stringstream ss(line);
+        std::string cell;
+
+        while (std::getline(ss, cell, ',')) {
+            row.push_back(cell);
+        }
+
+        data.push_back(row);
+    }
+
+    return data;
 }
