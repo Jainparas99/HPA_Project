@@ -44,11 +44,6 @@ target_link_libraries(hpa_project
     ${ONNXRUNTIME_LIB}
 )
 
-# Add linker option to avoid LIBCMT conflicts
-if(MSVC)
-    target_link_options(hpa_project PRIVATE "/NODEFAULTLIB:LIBCMT")
-endif()
-
 
 # Copy ONNX model to build directory
 add_custom_command(
