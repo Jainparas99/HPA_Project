@@ -330,7 +330,7 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
     int in_channels = 3;
     int out_channels;
 
-    // Initial output buffer: [N, 64, H, W] → we’ll keep sizes constant initially
+    // Initial output buffer: [N, 64, H, W]
     size_t max_buf_size = N * 512 * H * W * sizeof(float);
     cudaMalloc(&buf1, max_buf_size);
     cudaMalloc(&buf2, max_buf_size);
@@ -341,17 +341,33 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
     for (int i = 0; i < num_layers; ++i) {
         out_channels = conv_out_channels[i];
 
-        // launch_conv2d_tiled(current_input, weights[i], biases[i], current_output,
-        //              N, in_channels, H, W, out_channels, kernel_size, kernel_size, H, W);
+        // Timing with CUDA events for each layer
+        cudaEvent_t layer_start, layer_stop;
+        cudaEventCreate(&layer_start);
+        cudaEventCreate(&layer_stop);
+        cudaEventRecord(layer_start);
 
-        launch_conv2d_tiled_safe(current_input, weights[i], biases[i], current_output,
+        launch_conv2d_naive(current_input, weights[i], biases[i], current_output,
                     N, in_channels, H, W, out_channels, 3, 3, H, W);
 
-        std::cout << "Conv" << i << ": " << in_channels << "→" << out_channels << ", size: " << H << "x" << W << std::endl;
+        cudaEventRecord(layer_stop);
+        cudaEventSynchronize(layer_stop);
+        float layer_time_ms = 0;
+        cudaEventElapsedTime(&layer_time_ms, layer_stop, layer_start);
+        std::cout << "Conv" << i << ": " << in_channels << "→" << out_channels
+                  << ", size: " << H << "x" << W
+                  << ", time: " << layer_time_ms << " ms\n";
+        cudaEventDestroy(layer_start);
+        cudaEventDestroy(layer_stop);
 
         // Prepare for next layer
         in_channels = out_channels;
         std::swap(current_input, current_output);
+        // Halve spatial dimensions after VGG16's max pooling layers
+        if (i == 1 || i == 3 || i == 6 || i == 9) {
+            H /= 2;
+            W /= 2;
+        }
     }
 
     // Copy final conv output to 'output'
