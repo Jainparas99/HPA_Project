@@ -1,0 +1,31 @@
+HPA Project - CUDA VGG16 Convolution Testing
+
+Input size: 150528
+Weight size: 1728
+Bias size: 64
+Expected output size: 3211264
+
+Running CUDA Conv2D test on conv1 weights...
+
+Running conv2d_naive...
+Execution Time (ms): 0.377856
+GFLOPS: 458.927
+Max absolute difference: 10.3428
+L2 norm error: 2444.72
+
+Running conv2d_tiled...
+Launching with:
+N=1 C=3 H=224 W=224
+K=64 R=3 S=3 P=224 Q=224
+Output size: 3211264 elements
+Shared memory size: 1200 bytes
+conv2d_tiled complete
+Time: 5.28122 ms
+GFLOPS: 32.8349
+Max abs diff: 2.86102e-06
+L2 norm error: 0.000309775
+
+Running conv2d_tiled_coarsened...
+Execution Time: 0.568576 ms
+Max absolute difference: 2.86102e-06
+L2 norm error: 0.00030896
