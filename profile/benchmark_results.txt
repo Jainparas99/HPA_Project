@@ -58,3 +58,51 @@ GFLOPS: 117.682
 Max Absolute Difference: 12.1631
 L2 Norm Error: 2541.34
 -----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.426816
+GFLOPS: 406.283
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.400384
+GFLOPS: 433.105
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.419712
+GFLOPS: 413.16
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.402304
+GFLOPS: 431.038
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.396064
+GFLOPS: 437.829
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.381952
+GFLOPS: 454.005
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.386176
+GFLOPS: 449.039
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.386048
+GFLOPS: 449.188
+Max Absolute Difference: 12.1631
+L2 Norm Error: 2541.34
+-----------------------------

@@ -8,7 +8,7 @@ void launch_conv2d_naive(float* d_input, float* d_weight, float* d_bias, float* 
 
 #endif
 
-void launch_conv2d_tiled(float* d_input, float* d_weight, float* d_bias, float* d_output,
+void launch_conv2d_tiled_single_channel(float* d_input, float* d_weight, float* d_bias, float* d_output,
     int N, int C, int H, int W,
     int K, int R, int S, int P, int Q);
 

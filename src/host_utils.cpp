@@ -75,7 +75,7 @@ void run_conv2d_tiled_test(
 ) {
 
     std::cout << "Performing warm-up run for tiled kernel...";
-    launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
+    launch_conv2d_tiled_single_channel(d_input, d_weight, d_bias, d_output,
                                N, C, H, W, K, R, S, P, Q);
     CHECK_CUDA(cudaDeviceSynchronize());
     std::cout << "Running conv2d_tiled...\n";
@@ -89,7 +89,7 @@ void run_conv2d_tiled_test(
             << "Output size: " << P*Q*K*N << " elements\n";
 
     cudaEventRecord(start);
-    launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
+    launch_conv2d_tiled_single_channel(d_input, d_weight, d_bias, d_output,
                         N, C, H, W, K, R, S, P, Q);
 
     cudaError_t err = cudaGetLastError();
@@ -341,11 +341,14 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
     for (int i = 0; i < num_layers; ++i) {
         out_channels = conv_out_channels[i];
 
-        // launch_conv2d_tiled(current_input, weights[i], biases[i], current_output,
-        //              N, in_channels, H, W, out_channels, kernel_size, kernel_size, H, W);
+        launch_conv2d_tiled_single_channel(current_input, weights[i], biases[i], current_output,
+                     N, in_channels, H, W, out_channels, kernel_size, kernel_size, H, W);
 
-        launch_conv2d_tiled_safe(current_input, weights[i], biases[i], current_output,
-                    N, in_channels, H, W, out_channels, 3, 3, H, W);
+        // launch_conv2d_tiled_safe(current_input, weights[i], biases[i], current_output,
+        //             N, in_channels, H, W, out_channels, 3, 3, H, W);
+
+        // launch_conv2d_naive(current_input, weights[i], biases[i], current_output,
+        //             N, in_channels, H, W, out_channels, 3, 3, H, W);
 
         std::cout << "Conv" << i << ": " << in_channels << "→" << out_channels << ", size: " << H << "x" << W << std::endl;
 
