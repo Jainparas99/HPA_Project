@@ -106,3 +106,9 @@ GFLOPS: 449.188
 Max Absolute Difference: 12.1631
 L2 Norm Error: 2541.34
 -----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 1.00762
+GFLOPS: 172.098
+Max Absolute Difference: 12.0893
+L2 Norm Error: 2540.87
+-----------------------------
