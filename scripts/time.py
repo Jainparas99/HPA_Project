@@ -3,17 +3,17 @@ import cv2
 import time
 import onnxruntime as ort
 
-# ---- Load and preprocess image ----
-img_path = "001.jpg"  # your input
+# Load and preprocess image
+img_path = "001.jpg"
 img = cv2.imread(img_path)
 img = cv2.resize(img, (224, 224))
 img = img.astype(np.float32) / 255.0
 img = img.transpose(2, 0, 1)  
-img = np.expand_dims(img, axis=0)  # [1, 3, 224, 224]
+img = np.expand_dims(img, axis=0)
 
-np.save("/home/stu15/s15/pj2196/HPA/final/HPA_Project/models/input_tensor.npy", img)  # for CUDA input
+np.save("/home/stu15/s15/pj2196/HPA/final/HPA_Project/models/input_tensor.npy", img) 
 
-# ---- Run ONNX inference ----
+#Run ONNX inference
 session = ort.InferenceSession("/home/stu15/s15/pj2196/HPA/final/HPA_Project/build/vgg16.onnx", providers=["CUDAExecutionProvider"])
 input_name = session.get_inputs()[0].name
 

@@ -130,3 +130,27 @@ GFLOPS: 10.1837
 Max Absolute Difference: 12.0809
 L2 Norm Error: 2608.88
 -----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 0.919552
+GFLOPS: 188.579
+Max Absolute Difference: 12.0893
+L2 Norm Error: 2540.87
+-----------------------------
+Kernel: conv2d_tiled
+Execution Time (ms): 17.023
+GFLOPS: 10.1867
+Max Absolute Difference: 12.0809
+L2 Norm Error: 2608.87
+-----------------------------
+Kernel: conv2d_naive
+Execution Time (ms): 1.07418
+GFLOPS: 161.434
+Max Absolute Difference: 12.0893
+L2 Norm Error: 2540.87
+-----------------------------
+Kernel: conv2d_tiled
+Execution Time (ms): 17.0322
+GFLOPS: 10.1812
+Max Absolute Difference: 12.0809
+L2 Norm Error: 2608.86
+-----------------------------

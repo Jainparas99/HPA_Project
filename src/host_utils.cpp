@@ -132,7 +132,6 @@ void write_benchmark_to_file(const std::string& kernel_name, float time_ms, floa
         out << "GFLOPS: " << gflops << "\n";
         out << "Max Absolute Difference: " << max_diff << "\n";
         out << "L2 Norm Error: " << l2_error << "\n";
-        out << "-----------------------------\n";
         out.close();
     } else {
         std::cerr << "Unable to write benchmark results.\n";
@@ -179,7 +178,7 @@ void run_conv2d_tiled_coarsened_test(
     std::cout << "Max absolute difference: " << max_diff << "\n";
     std::cout << "L2 norm error: " << l2_norm << "\n";
 
-    // Optional: log to file
+    // log to file
     std::ofstream file("profile/conv2d_tiled_coarsened.txt");
     file << "Kernel: conv2d_tiled_coarsened\n";
     file << "Execution Time: " << elapsed_ms << " ms\n";
@@ -207,14 +206,7 @@ void placeholder_utils_function() {
     std::vector<float> weight = weight_np.as_vec<float>();
     std::vector<float> bias = bias_np.as_vec<float>();
     std::vector<float> conv1_expected_output = conv1_output_np.as_vec<float>();
-    //std::vector<float> expected = expected_np.as_vec<float>();
 
-//     float* input = input_np.data<float>();      // [1, 3, 224, 224]
-// -    float* weight = weight_np.data<float>();    // [64, 3, 3, 3]
-// -    float* bias = bias_np.data<float>();        // [64]z
-// -    float* expected = expected_np.data<float>();
-
-    // VGG16 conv1 shape (as an example)
     int N = 1, C = 3, H = 224, W = 224;
     int K = 64, R = 3, S = 3;
     int P = 224, Q = 224;  // Assuming padding=1, stride=1
@@ -282,10 +274,6 @@ void load_all_conv_weights_biases(float**& d_weights, float**& d_biases, int num
         size_t bias_size = 1;
         for (auto dim : bias_np.shape) bias_size *= dim;
 
-
-        // size_t weight_size;
-        // size_t bias_size; 
-        // Allocate device memory
         cudaMalloc(&d_weights[i], weight_size * sizeof(float));
         cudaMalloc(&d_biases[i],  bias_size * sizeof(float));
 
@@ -295,9 +283,6 @@ void load_all_conv_weights_biases(float**& d_weights, float**& d_biases, int num
 
         std::cout << "Loaded conv" << i << " weights and bias" << std::endl;
 
-        // Optionally free host memory if load_npy allocates dynamically
-        // free(h_weight);
-        // free(h_bias);
     }
 }
 
@@ -351,7 +336,7 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
         // Prepare for next layer
         in_channels = out_channels;
         std::swap(current_input, current_output);
-        // Halve spatial dimensions after VGG16's max pooling layers
+        // Half spatial dimensions
         if (i == 1 || i == 3 || i == 6 || i == 9) {
             H /= 2;
             W /= 2;

@@ -19,7 +19,7 @@ int main() {
 
     std::cout << "HPA Project - CUDA VGG16 Convolution Testing\n";
 
-    // Placeholder function to confirm CUDA + host code builds
+    // Placeholder function to confirm CUDA + host code 
     placeholder_utils_function();
     std::cout << " Running VGG16 Conv Layer Inference...\n";
 
@@ -79,8 +79,6 @@ int main() {
         l2_error += diff * diff;
     }
     l2_error = std::sqrt(l2_error);
-
-    // GFLOPs: Conv ops (approx.) = 2 * K * C * R * S * P * Q * N (summed over all layers)
     long long total_ops = 0;
     const int conv_out_channels[13] = {64, 64, 128, 128, 256, 256, 256, 512, 512, 512, 512, 512, 512};
     int in_channels = C;
