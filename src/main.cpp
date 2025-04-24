@@ -53,6 +53,12 @@ int main() {
             measure_fc_layer_performance(batch_size, 25088, 4096, 5);
         }
 
+        // Test custom FC layer implementations
+        std::cout << "\n=== Custom FC Layer Implementation Tests ===" << std::endl;
+        test_custom_fc_implementations(1, 4096, 4096);     // FC2 size for initial testing (smaller)
+        test_custom_fc_implementations(1, 25088, 4096);    // FC1 size (largest layer)
+        test_custom_fc_implementations(16, 25088, 4096);   // FC1 with batch=16 to test scaling
+
         // Add CGMA analysis for the three FC layers in VGG16
         std::cout << "\n=== CGMA Analysis for VGG16 FC Layers ===" << std::endl;
         analyze_cgma(1, 25088, 4096); // FC1 (largest layer)

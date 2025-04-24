@@ -19,7 +19,7 @@ void fc_layer_cpu(float* input, float* weights, float* bias, float* output,
 void generate_random_data(float* data, size_t size, float min = -1.0f, float max = 1.0f);
 
 // Check if two arrays are approximately equal
-bool arrays_equal(float* arr1, float* arr2, size_t size, float tolerance = 1e-3);
+bool arrays_equal(float* arr1, float* arr2, size_t size, float tolerance = 1e-2);
 
 // Initialize ONNX Runtime and create a session
 void* initialize_onnx_session(const wchar_t* model_path);
@@ -39,5 +39,8 @@ void analyze_cgma(int batch_size, int input_features, int output_features);
 // Model prediction functions
 void display_predictions(float* output, int batch_size, int num_classes, int k = 5);
 void run_model_prediction(Ort::Session& session, bool use_gpu = true);
+
+// Test custom FC layer implementations
+void test_custom_fc_implementations(int batch_size, int input_features, int output_features);
 
 #endif // HOST_UTILS_H

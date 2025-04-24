@@ -431,3 +431,227 @@ void run_model_prediction(Ort::Session& session, bool use_gpu) {
     // Display top predictions
     display_predictions(output_tensor_values.data(), batch_size, num_classes);
 }
+
+/**
+ * Tests and benchmarks custom FC layer implementations against cuBLAS.
+ * This function compares performance and accuracy of different implementations.
+ *
+ * @param batch_size Number of samples in the batch
+ * @param input_features Number of input neurons
+ * @param output_features Number of output neurons
+ */
+void test_custom_fc_implementations(int batch_size, int input_features, int output_features) {
+    std::cout << "\n=== Testing Custom FC Layer Implementations ===" << std::endl;
+    
+    // Allocate memory for test data
+    float* input = new float[batch_size * input_features];
+    float* weights = new float[output_features * input_features];
+    float* bias = new float[output_features];
+    float* output_cublas = new float[batch_size * output_features];
+    float* output_cublas_batched = new float[batch_size * output_features];
+    float* output_naive = new float[batch_size * output_features];
+    float* output_tiled = new float[batch_size * output_features];
+    float* output_vectorized = new float[batch_size * output_features];
+    
+    // Initialize with random data
+    generate_random_data(input, batch_size * input_features);
+    generate_random_data(weights, output_features * input_features);
+    generate_random_data(bias, output_features);
+    
+    std::cout << "Input features: " << input_features << ", Output features: " << output_features 
+              << ", Batch size: " << batch_size << std::endl;
+    
+    // CUDA timing events
+    cudaEvent_t start, stop;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
+    float milliseconds;
+    
+    // Run cuBLAS implementation for reference
+    std::cout << "\n1. cuBLAS implementation:" << std::endl;
+    fc_layer_cublas(input, weights, bias, output_cublas, batch_size, input_features, output_features);
+    
+    // Warm-up run
+    for (int i = 0; i < 3; i++) {
+        fc_layer_cublas(input, weights, bias, output_cublas, batch_size, input_features, output_features);
+    }
+    
+    // Timed runs
+    cudaEventRecord(start);
+    int iterations = 10;
+    for (int i = 0; i < iterations; i++) {
+        fc_layer_cublas(input, weights, bias, output_cublas, batch_size, input_features, output_features);
+    }
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    float cublas_time = milliseconds / iterations;
+    
+    // Calculate GFLOPS for cuBLAS
+    // Operations: 2 * batch_size * output_features * input_features (GEMM)
+    //            + batch_size * output_features (bias)
+    //            + batch_size * output_features (ReLU)
+    double ops = 2.0 * batch_size * output_features * input_features + 
+                2.0 * batch_size * output_features;
+    double cublas_gflops = (ops / (cublas_time / 1000.0)) / 1e9;
+    
+    std::cout << "  Average time: " << cublas_time << " ms over " << iterations << " iterations" << std::endl;
+    std::cout << "  Performance: " << cublas_gflops << " GFLOPS" << std::endl;
+
+    // Test batched cuBLAS implementation
+    std::cout << "\n1b. Batched cuBLAS implementation:" << std::endl;
+    fc_layer_cublas_batched(input, weights, bias, output_cublas_batched, batch_size, input_features, output_features);
+    
+    // Warm-up runs
+    for (int i = 0; i < 3; i++) {
+        fc_layer_cublas_batched(input, weights, bias, output_cublas_batched, batch_size, input_features, output_features);
+    }
+    
+    // Timed runs
+    cudaEventRecord(start);
+    for (int i = 0; i < iterations; i++) {
+        fc_layer_cublas_batched(input, weights, bias, output_cublas_batched, batch_size, input_features, output_features);
+    }
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    float cublas_batched_time = milliseconds / iterations;
+    
+    double cublas_batched_gflops = (ops / (cublas_batched_time / 1000.0)) / 1e9;
+    
+    std::cout << "  Average time: " << cublas_batched_time << " ms over " << iterations << " iterations" << std::endl;
+    std::cout << "  Performance: " << cublas_batched_gflops << " GFLOPS" << std::endl;
+    std::cout << "  Performance relative to standard cuBLAS: " << (cublas_time / cublas_batched_time * 100.0f) << "%" << std::endl;
+    
+    // Check correctness
+    bool cublas_batched_correct = arrays_equal(output_cublas, output_cublas_batched, batch_size * output_features);
+    std::cout << "  Correctness: " << (cublas_batched_correct ? "PASS" : "FAIL") << std::endl;
+    
+    // Run naive custom implementation
+    std::cout << "\n2. Naive custom implementation:" << std::endl;
+    fc_layer_custom_naive(input, weights, bias, output_naive, batch_size, input_features, output_features);
+    
+    // Warm-up run
+    for (int i = 0; i < 3; i++) {
+        fc_layer_custom_naive(input, weights, bias, output_naive, batch_size, input_features, output_features);
+    }
+    
+    // Timed runs
+    cudaEventRecord(start);
+    for (int i = 0; i < iterations; i++) {
+        fc_layer_custom_naive(input, weights, bias, output_naive, batch_size, input_features, output_features);
+    }
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    float naive_time = milliseconds / iterations;
+    double naive_gflops = (ops / (naive_time / 1000.0)) / 1e9;
+    
+    std::cout << "  Average time: " << naive_time << " ms over " << iterations << " iterations" << std::endl;
+    std::cout << "  Performance: " << naive_gflops << " GFLOPS" << std::endl;
+    std::cout << "  Performance relative to cuBLAS: " << (cublas_time / naive_time * 100.0f) << "%" << std::endl;
+    
+    // Check correctness of naive implementation
+    bool naive_correct = arrays_equal(output_cublas, output_naive, batch_size * output_features);
+    std::cout << "  Correctness: " << (naive_correct ? "PASS" : "FAIL") << std::endl;
+    
+    // Run tiled custom implementation
+    std::cout << "\n3. Tiled custom implementation:" << std::endl;
+    fc_layer_custom_tiled(input, weights, bias, output_tiled, batch_size, input_features, output_features);
+    
+    // Warm-up run
+    for (int i = 0; i < 3; i++) {
+        fc_layer_custom_tiled(input, weights, bias, output_tiled, batch_size, input_features, output_features);
+    }
+    
+    // Timed runs
+    cudaEventRecord(start);
+    for (int i = 0; i < iterations; i++) {
+        fc_layer_custom_tiled(input, weights, bias, output_tiled, batch_size, input_features, output_features);
+    }
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    float tiled_time = milliseconds / iterations;
+    double tiled_gflops = (ops / (tiled_time / 1000.0)) / 1e9;
+    
+    std::cout << "  Average time: " << tiled_time << " ms over " << iterations << " iterations" << std::endl;
+    std::cout << "  Performance: " << tiled_gflops << " GFLOPS" << std::endl;
+    std::cout << "  Performance relative to cuBLAS: " << (cublas_time / tiled_time * 100.0f) << "%" << std::endl;
+    
+    // Check correctness of tiled implementation
+    bool tiled_correct = arrays_equal(output_cublas, output_tiled, batch_size * output_features);
+    std::cout << "  Correctness: " << (tiled_correct ? "PASS" : "FAIL") << std::endl;
+    
+    // Run vectorized custom implementation
+    std::cout << "\n4. Vectorized custom implementation:" << std::endl;
+    fc_layer_custom_vectorized(input, weights, bias, output_vectorized, batch_size, input_features, output_features);
+    
+    // Warm-up run
+    for (int i = 0; i < 3; i++) {
+        fc_layer_custom_vectorized(input, weights, bias, output_vectorized, batch_size, input_features, output_features);
+    }
+    
+    // Timed runs
+    cudaEventRecord(start);
+    for (int i = 0; i < iterations; i++) {
+        fc_layer_custom_vectorized(input, weights, bias, output_vectorized, batch_size, input_features, output_features);
+    }
+    cudaEventRecord(stop);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&milliseconds, start, stop);
+    float vectorized_time = milliseconds / iterations;
+    double vectorized_gflops = (ops / (vectorized_time / 1000.0)) / 1e9;
+    
+    std::cout << "  Average time: " << vectorized_time << " ms over " << iterations << " iterations" << std::endl;
+    std::cout << "  Performance: " << vectorized_gflops << " GFLOPS" << std::endl;
+    std::cout << "  Performance relative to cuBLAS: " << (cublas_time / vectorized_time * 100.0f) << "%" << std::endl;
+    
+    // Check correctness of vectorized implementation
+    bool vectorized_correct = arrays_equal(output_cublas, output_vectorized, batch_size * output_features);
+    std::cout << "  Correctness: " << (vectorized_correct ? "PASS" : "FAIL") << std::endl;
+    
+    // Summary table
+    std::cout << "\n=== Performance Summary ===" << std::endl;
+    std::cout << "|--------------------|------------|-----------|-----------------|------------|" << std::endl;
+    std::cout << "| Implementation     | Time (ms)  | GFLOPS    | Relative to     | Correct?   |" << std::endl;
+    std::cout << "|                    |            |           | cuBLAS (%)      |            |" << std::endl;
+    std::cout << "|--------------------|------------|-----------|-----------------|------------|" << std::endl;
+    std::cout << "| cuBLAS             | " << std::setw(10) << std::fixed << std::setprecision(2) << cublas_time 
+              << " | " << std::setw(9) << std::fixed << std::setprecision(2) << cublas_gflops 
+              << " | " << std::setw(15) << "100.00" 
+              << " | " << std::setw(10) << "Yes" << " |" << std::endl;
+    
+    std::cout << "| cuBLAS Batched     | " << std::setw(10) << std::fixed << std::setprecision(2) << cublas_batched_time 
+              << " | " << std::setw(9) << std::fixed << std::setprecision(2) << cublas_batched_gflops 
+              << " | " << std::setw(15) << std::fixed << std::setprecision(2) << (cublas_time / cublas_batched_time * 100.0f)
+              << " | " << std::setw(10) << (cublas_batched_correct ? "Yes" : "No") << " |" << std::endl;
+    
+    std::cout << "| Naive Custom       | " << std::setw(10) << std::fixed << std::setprecision(2) << naive_time 
+              << " | " << std::setw(9) << std::fixed << std::setprecision(2) << naive_gflops 
+              << " | " << std::setw(15) << std::fixed << std::setprecision(2) << (cublas_time / naive_time * 100.0f) 
+              << " | " << std::setw(10) << (naive_correct ? "Yes" : "No") << " |" << std::endl;
+    
+    std::cout << "| Tiled Shared Mem   | " << std::setw(10) << std::fixed << std::setprecision(2) << tiled_time 
+              << " | " << std::setw(9) << std::fixed << std::setprecision(2) << tiled_gflops 
+              << " | " << std::setw(15) << std::fixed << std::setprecision(2) << (cublas_time / tiled_time * 100.0f) 
+              << " | " << std::setw(10) << (tiled_correct ? "Yes" : "No") << " |" << std::endl;
+    
+    std::cout << "| Vectorized         | " << std::setw(10) << std::fixed << std::setprecision(2) << vectorized_time 
+              << " | " << std::setw(9) << std::fixed << std::setprecision(2) << vectorized_gflops 
+              << " | " << std::setw(15) << std::fixed << std::setprecision(2) << (cublas_time / vectorized_time * 100.0f) 
+              << " | " << std::setw(10) << (vectorized_correct ? "Yes" : "No") << " |" << std::endl;
+    std::cout << "|--------------------|------------|-----------|-----------------|------------|" << std::endl;
+    
+    // Clean up
+    delete[] input;
+    delete[] weights;
+    delete[] bias;
+    delete[] output_cublas;
+    delete[] output_cublas_batched;
+    delete[] output_naive;
+    delete[] output_tiled;
+    delete[] output_vectorized;
+    cudaEventDestroy(start);
+    cudaEventDestroy(stop);
+}
