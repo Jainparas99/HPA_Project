@@ -96,7 +96,6 @@ int main() {
     std::cout << "Time: " << elapsed_time_ms << " ms\n";
     std::cout << "GFLOPs: " << gflops << "\n";
     std::cout << "Max Abs Diff: " << max_diff << "\n";
-    std::cout << "L2 Norm Error: " << l2_error << "\n";
 
     // Cleanup
     cudaFree(d_input);

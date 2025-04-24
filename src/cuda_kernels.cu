@@ -150,7 +150,7 @@ void launch_conv2d_naive(
 // }
 
 #define TILE_WIDTH 8
-#define KERNEL_SIZE 3  
+#define KERNEL_SIZE 3
 
 __global__ void conv2d_tiled_kernel(
     const float* __restrict__ input,    // [N, C, H, W]
@@ -160,7 +160,6 @@ __global__ void conv2d_tiled_kernel(
     int N, int C, int H, int W,
     int K, int R, int S, int P, int Q
 ) {
-    // 2D thread and block indices
     int tx = threadIdx.x;
     int ty = threadIdx.y;
 
@@ -169,48 +168,80 @@ __global__ void conv2d_tiled_kernel(
     int k = blockIdx.z % K;
     int n = blockIdx.z / K;
 
-    // Tile size = TILE_WIDTH + KERNEL_SIZE - 1
-    __shared__ float tile[TILE_WIDTH + KERNEL_SIZE - 1][TILE_WIDTH + KERNEL_SIZE - 1];
+    const int TILE_PAD = KERNEL_SIZE / 2;
+    const int TILE_SIZE = TILE_WIDTH + 2 * TILE_PAD;
+
+    // Use dynamic shared memory
+    extern __shared__ float tile[];
 
     if (out_x >= P || out_y >= Q || n >= N || k >= K) return;
 
     float acc = bias[k];
 
-    // Accumulate over channels
     for (int c = 0; c < C; ++c) {
-        // Each thread loads its tile region (1 value)
-        int h_in = out_x - R / 2;
-        int w_in = out_y - S / 2;
+        // Global input location for this thread
+        int input_x = out_x - TILE_PAD;
+        int input_y = out_y - TILE_PAD;
 
-        int tile_h = tx;
-        int tile_w = ty;
+        // Each thread loads into shared memory
+        int shared_x = tx + TILE_PAD;
+        int shared_y = ty + TILE_PAD;
 
-        if (h_in >= 0 && h_in < H && w_in >= 0 && w_in < W)
-            tile[tile_h][tile_w] = input[((n * C + c) * H + h_in) * W + w_in];
-        else
-            tile[tile_h][tile_w] = 0.0f;
+        // Load center pixel
+        if (input_x >= 0 && input_x < H && input_y >= 0 && input_y < W) {
+            tile[shared_y * TILE_SIZE + shared_x] = input[((n * C + c) * H + input_x) * W + input_y];
+        } else {
+            tile[shared_y * TILE_SIZE + shared_x] = 0.0f;
+        }
 
-        __syncthreads();
+        // Load halo edges (top, left, right, bottom) as needed
+        if (tx < TILE_PAD) {
+            // Left
+            int ix = input_x - TILE_PAD;
+            int iy = input_y;
+            tile[shared_y * TILE_SIZE + (shared_x - TILE_PAD)] =
+                (ix >= 0 && iy >= 0 && iy < W) ? input[((n * C + c) * H + ix) * W + iy] : 0.0f;
+            // Right
+            ix = input_x + TILE_WIDTH;
+            tile[shared_y * TILE_SIZE + (shared_x + TILE_WIDTH)] =
+                (ix < H && iy >= 0 && iy < W) ? input[((n * C + c) * H + ix) * W + iy] : 0.0f;
+        }
 
-        // Apply kernel weights for this channel
-        for (int r = 0; r < R; ++r) {
-            for (int s = 0; s < S; ++s) {
-                int tile_r = tx + r;
-                int tile_s = ty + s;
-
-                if (tile_r < TILE_WIDTH + R - 1 && tile_s < TILE_WIDTH + S - 1) {
-                    float tile_val = tile[tile_r][tile_s];
-                    float w = weights[((k * C + c) * R + r) * S + s];
-                    acc += tile_val * w;
-                }
-            }
+        if (ty < TILE_PAD) {
+            // Top
+            int ix = input_x;
+            int iy = input_y - TILE_PAD;
+            tile[(shared_y - TILE_PAD) * TILE_SIZE + shared_x] =
+                (iy >= 0 && ix >= 0 && ix < H) ? input[((n * C + c) * H + ix) * W + iy] : 0.0f;
+            // Bottom
+            iy = input_y + TILE_WIDTH;
+            tile[(shared_y + TILE_WIDTH) * TILE_SIZE + shared_x] =
+                (iy < W && ix >= 0 && ix < H) ? input[((n * C + c) * H + ix) * W + iy] : 0.0f;
         }
 
         __syncthreads();
+
+        // Apply kernel
+       for (int r = 0; r < R; ++r) {
+        for (int s = 0; s < S; ++s) {
+            int tile_r = shared_y + s - TILE_PAD;
+            int tile_c = shared_x + r - TILE_PAD;
+
+            if (tile_r >= 0 && tile_r < TILE_SIZE && tile_c >= 0 && tile_c < TILE_SIZE) {
+                float val = tile[tile_r * TILE_SIZE + tile_c];
+                float w = weights[((k * C + c) * R + r) * S + s];
+                acc += val * w;
+            }
+        }
+}
+
+        __syncthreads(); // prepare tile for next channel
     }
 
-    int out_idx = ((n * K + k) * P + out_x) * Q + out_y;
-    output[out_idx] = acc;
+    if (out_x < P && out_y < Q) {
+        int out_idx = ((n * K + k) * P + out_x) * Q + out_y;
+        output[out_idx] = acc;
+    }
 }
 
 void launch_conv2d_tiled(
@@ -223,10 +254,12 @@ void launch_conv2d_tiled(
                  (Q + TILE_WIDTH - 1) / TILE_WIDTH,
                  N * K);
 
-    size_t shared_mem_size = sizeof(float) * (TILE_WIDTH + R - 1) * (TILE_WIDTH + S - 1);
+    int pad = KERNEL_SIZE / 2;
+    int tile_size = TILE_WIDTH + 2 * pad;
+    size_t shared_mem_size = sizeof(float) * tile_size * tile_size;
 
-    std::cout << "Launching tiled spatial-only kernel, shared memory: "
-              << shared_mem_size << " bytes" << std::endl;
+    std::cout << "Launching tiled kernel with shared memory: "
+              << shared_mem_size << " bytes\n";
 
     conv2d_tiled_kernel<<<gridDim, blockDim, shared_mem_size>>>(
         input, weight, bias, output, N, C, H, W, K, R, S, P, Q
@@ -237,7 +270,6 @@ void launch_conv2d_tiled(
     if (err != cudaSuccess)
         std::cerr << "CUDA Error: " << cudaGetErrorString(err) << std::endl;
 }
-
 
 
 // void launch_conv2d_tiled(float* d_input, float* d_weight, float* d_bias, float* d_output,

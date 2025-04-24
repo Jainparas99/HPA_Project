@@ -71,70 +71,58 @@ void run_conv2d_naive_test(
 void run_conv2d_tiled_test(
     float* d_input, float* d_weight, float* d_bias, float* d_output,
     const std::vector<float>& expected,
-    int N, int C, int H, int W, int K, int R, int S, int P, int Q
-) {
+    int N, int C, int H, int W, int K, int R, int S, int P, int Q) {
 
-    std::cout << "Performing warm-up run for tiled kernel...";
-    launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
-                               N, C, H, W, K, R, S, P, Q);
-    CHECK_CUDA(cudaDeviceSynchronize());
     std::cout << "Running conv2d_tiled...\n";
 
+    // Warm-up
+    std::cout << "Performing warm-up run for tiled kernel...";
+    launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
+                        N, C, H, W, K, R, S, P, Q);
+    CHECK_CUDA(cudaDeviceSynchronize());
+
+    // Time using CUDA events
     cudaEvent_t start, stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
-    std::cout << "Launching with:\n"
-            << "N=" << N << " C=" << C << " H=" << H << " W=" << W << "\n"
-            << "K=" << K << " R=" << R << " S=" << S << " P=" << P << " Q=" << Q << "\n"
-            << "Output size: " << P*Q*K*N << " elements\n";
-
     cudaEventRecord(start);
+
     launch_conv2d_tiled(d_input, d_weight, d_bias, d_output,
                         N, C, H, W, K, R, S, P, Q);
 
-    cudaError_t err = cudaGetLastError();
-    if (err != cudaSuccess) {
-        std::cerr << "CUDA Kernel Launch Error: " << cudaGetErrorString(err) << std::endl;
-                        }
-                        
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
 
-    float milliseconds = 0;
-    cudaEventElapsedTime(&milliseconds, start, stop);
-    float seconds = milliseconds / 1000.0f;
+    float elapsed_time_ms;
+    cudaEventElapsedTime(&elapsed_time_ms, start, stop);
 
-    int output_size = N * K * P * Q;
-    std::vector<float> output(output_size);
-    size_t output_bytes = output.size() * sizeof(float);
-
+    // Copy result back to host
+    size_t output_bytes = N * K * P * Q * sizeof(float);
+    std::vector<float> output(N * K * P * Q);
     cudaMemcpy(output.data(), d_output, output_bytes, cudaMemcpyDeviceToHost);
 
+    // Compute metrics
+    float gflops = (2.0f * K * C * R * S * P * Q * N) / (elapsed_time_ms * 1e6f);
     float max_diff = 0.0f;
-    float l2_sum = 0.0f;
+    float l2_error = 0.0f;
     for (size_t i = 0; i < output.size(); ++i) {
-        float diff = output[i] - expected[i];
-        max_diff = std::max(max_diff, std::abs(diff));
-        l2_sum += diff * diff;
+        float diff = std::abs(output[i] - expected[i]);
+        max_diff = std::max(max_diff, diff);
+        l2_error += diff * diff;
     }
+    l2_error = std::sqrt(l2_error);
 
-    float l2_error = std::sqrt(l2_sum);
-    float ops = 2.0f * K * C * R * S * P * Q * N;
-    float gflops = ops / (seconds * 1e6);
-
-    std::cout << "conv2d_tiled complete\n";
-    std::cout << "Time: " << milliseconds << " ms\n";
+    // Print and log
+    std::cout << "Execution Time (ms): " << elapsed_time_ms << "\n";
     std::cout << "GFLOPS: " << gflops << "\n";
-    std::cout << "Max abs diff: " << max_diff << "\n";
-    std::cout << "L2 norm error: " << l2_error << std::endl;
+    std::cout << "Max absolute difference: " << max_diff << "\n";
+    std::cout << "L2 norm error: " << l2_error << "\n";
 
-    // write_benchmark_to_file("conv2d_tiled", milliseconds, gflops, max_diff, l2_error);
-
+    write_benchmark_to_file("conv2d_tiled", elapsed_time_ms, gflops, max_diff, l2_error);
 
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
 }
-
 
 void write_benchmark_to_file(const std::string& kernel_name, float time_ms, float gflops, float max_diff, float l2_error) {
     std::ofstream out("profile/benchmark_results.txt", std::ios::app); // append mode
@@ -347,7 +335,7 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
         cudaEventCreate(&layer_stop);
         cudaEventRecord(layer_start);
 
-        launch_conv2d_naive(current_input, weights[i], biases[i], current_output,
+        launch_conv2d_tiled(current_input, weights[i], biases[i], current_output,
                     N, in_channels, H, W, out_channels, 3, 3, H, W);
 
         cudaEventRecord(layer_stop);
@@ -356,7 +344,7 @@ void run_vgg16_conv_layers(float* input, float** weights, float** biases, float*
         cudaEventElapsedTime(&layer_time_ms, layer_stop, layer_start);
         std::cout << "Conv" << i << ": " << in_channels << "→" << out_channels
                   << ", size: " << H << "x" << W
-                  << ", time: " << layer_time_ms << " ms\n";
+                  << ", time: " << abs(layer_time_ms) << " ms\n";
         cudaEventDestroy(layer_start);
         cudaEventDestroy(layer_stop);
 
