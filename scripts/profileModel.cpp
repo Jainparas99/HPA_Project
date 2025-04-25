@@ -109,15 +109,19 @@ int main() {
 
     torch::Device device(torch::kCUDA, device_id);
 
-    // ✅ Load model paths from CSV
+    // Load model paths from CSV
     std::string csv_path = "config/models.csv";
     auto csv_data = read_csv(csv_path);
+    
+    // Createa a arr of batch sized to see how well the kernel scales
+
+    std::vector<int> batch_sizes = {1, 2, 4, 8, 16, 32, 64, 128};
+
 
     if (csv_data.empty()) {
         std::cerr << "[ERROR] No models found in CSV.\n";
         return 1;
     }
-
     for (const auto& row : csv_data) {
         if (row.empty()) continue;
         const std::string& model_path = row[0];
@@ -136,15 +140,23 @@ int main() {
 
         module.to(device);
         module.eval();
-
-        at::Tensor x = torch::randn({50, 3, 224, 224}, torch::TensorOptions().device(device));
-
-        auto results = profileSubmodulesCUDA(module, x, device_id);
-
-        std::cout << "Layer‑wise GPU times for " << model_path << ":\n";
-        for (auto& [layer, ms] : results) {
-            std::cout << "  " << layer << ": " << ms << " ms\n";
+        for(int batch_size : batch_sizes) {
+            std::cout << "[DEBUG] Profiling with batch size: " << batch_size << std::endl;
+            at::Tensor x = torch::randn({batch_size, 3, 224, 224}, torch::TensorOptions().device(device));
+            auto results = profileSubmodulesCUDA(module, x, device_id);
+            std::cout << "Layer‑wise GPU times for " << model_path << " with batch size " << batch_size << ":\n";
+            for (auto& [layer, ms] : results) {
+                std::cout << "  " << layer << ": " << ms << " ms\n";
+            }
         }
+        // at::Tensor x = torch::randn({50, 3, 224, 224}, torch::TensorOptions().device(device));
+
+        // auto results = profileSubmodulesCUDA(module, x, device_id);
+
+        // std::cout << "Layer‑wise GPU times for " << model_path << ":\n";
+        // for (auto& [layer, ms] : results) {
+        //     std::cout << "  " << layer << ": " << ms << " ms\n";
+        // }
     }
 
     std::cout << "\n[DEBUG] Finished profiling all models.\n";

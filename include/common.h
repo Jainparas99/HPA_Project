@@ -17,3 +17,5 @@ torch::Tensor make_random_image_batch_tensor(
 );
 
 std::vector<std::vector<std::string>> read_csv(const std::string& filename);
+
+void compute_l2_loss( torch::Tensor& a,  torch::Tensor& b);

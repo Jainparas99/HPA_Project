@@ -1,6 +1,7 @@
 #include <dlfcn.h>
 #include <torch/script.h>
 #include <iostream>
+#include <c10/cuda/CUDAGuard.h>
 
 int main(int argc, char** argv) {
   // 1) Load the custom‐op library
@@ -9,6 +10,10 @@ int main(int argc, char** argv) {
     std::cerr << "dlopen(libhpc.so) failed: " << dlerror() << "\n";
     return -1;
   }
+  // set the gpu number
+  int gpu_index = 17;
+  c10::cuda::CUDAGuard device_guard(gpu_index);
+  torch::Device device(torch::kCUDA, gpu_index);
 
   // 2) Load the scripted model
   torch::jit::Module model;
@@ -19,11 +24,11 @@ int main(int argc, char** argv) {
     return -1;
   }
 
-  model.to(at::kCUDA);
+  model.to(device);
   model.eval();
 
   // 3) Run a dummy batch
-  at::Tensor input = torch::randn({1,3,224,224}, torch::kCUDA);
+  at::Tensor input = torch::randn({1,3,224,224}, device);
   at::Tensor out   = model.forward({input}).toTensor();
 
   std::cout << "Output shape: " << out.sizes() << "\n";

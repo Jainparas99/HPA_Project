@@ -11,3 +11,6 @@ void fc_forward_cuda(
   int          D_in,
   int          D_out
 );
+
+void fc_layer_custom_tiled(const float* input, const float* weights, const float* bias, float* output,
+                            int batch_size, int input_features, int output_features);

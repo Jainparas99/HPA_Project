@@ -6,11 +6,15 @@
 #include <ctime>
 #include "logger.h"
 #include "common.h"
+#include <cmath>
+#include <fmt/core.h>
+#include <string>
 
 int main() {
   Logger& log = Logger::instance();
   log.setLevel(LogLevel::INFO);
   const std::string model = "models/pytorch_resnet50.pt";
+  const std::string batch_size_csv = "config/batch_size.csv";
 
   log.printAsteriskLine();
   log.LOG_INFO("CPU timing for the model: "+ model);
@@ -29,44 +33,103 @@ int main() {
     module.to(device);
     std::cout << "Loaded ResNet-50 model via torch\n";
     log.LOG_INFO("Loaded ResNet-50 model via torch\n");
-    // For testing, Creating a dummy image_data vector
-    int batch_size = 3;
-    int channels = 3;
-    int height = 224;
-    int width = 224;
 
-    // --- Normalize the image data (using ImageNet statistics ---
+    // Read batch sizes from CSV using read_csv
+    auto csv_data = read_csv(batch_size_csv);
+    std::vector<int> batch_sizes;
+
+    for (const auto& row : csv_data) {
+        if (!row.empty()) {
+            int batch_size = std::stoi(row[0]);
+                batch_sizes.push_back(std::pow(2.0,batch_size));
+        }
+    }
+
     std::vector<float> mean = {0.485f, 0.456f, 0.406f};
     std::vector<float> stddev = {0.229f, 0.224f, 0.225f};
-    std::cout<< "Going to generate the data\n";
-    auto input_tensor = make_random_image_batch_tensor(
-                    batch_size, channels, height, width, mean, stddev, device);
 
-    std::vector<torch::jit::IValue> inputs;
-    inputs.push_back(input_tensor);
-    unsigned int iters = 1000;
-    double total_time = 0.0f;
-    torch::Tensor output_tensor;
+    for ( int batch:batch_sizes){
+      int channels = 3;
+      int height = 224;
+      int width = 224;
 
-    for(unsigned int i=0; i<iters;i++){
-      std::clock_t start = std::clock();
-      output_tensor = module.forward(inputs).toTensor();
-      total_time += double(std::clock() - start) / CLOCKS_PER_SEC;
-    }
-    double avg_inference_time = total_time / iters;
-    std::cout <<"Total time "<< avg_inference_time << "s \n";
-    log.LOG_INFO("Total time "+ std::to_string(avg_inference_time));
-    // Execute the model
-    // torch::Tensor output_tensor = module.forward(inputs).toTensor();
+      std::cout<< "Going to generate the data for bs: "<<batch<<"\n";
+      log.LOG_INFO("Going to generate the data for bs: "+ std::to_string(batch));
+      auto input_tensor = make_random_image_batch_tensor(
+                batch, channels, height, width, mean, stddev, device);
+      std::vector<torch::jit::IValue> inputs;
+      inputs.push_back(input_tensor);
+      unsigned int iters = 100;
+      double total_time = 0.0f;
+      torch::Tensor output_tensor;
+      torch::Tensor testing_tensor;
 
-    std::cout << "Output Tensor shape: " << output_tensor.sizes() << "\n";
-    log.LOG_INFO("Output Tensor shape: " + shapeToString(output_tensor.sizes()));
-    // Process the output tensor here
+      for(unsigned int i = 0; i < iters; i++) {
+        std::clock_t start = std::clock();
+        output_tensor = module.forward(inputs).toTensor();
+        total_time += double(std::clock() - start) / CLOCKS_PER_SEC;
+        testing_tensor = output_tensor;
+      }
+      compute_l2_loss(testing_tensor, output_tensor);
+
+      // Save the output to a CSV file
+      std::string save_path = "outputs/"+std::to_string(batch)+"_output_tensor.pt";
+      torch::save(output_tensor, save_path);
+      double avg_inference_time = total_time / iters;
+      std::cout <<"Total time "<< avg_inference_time << "s \n";
+      log.LOG_INFO("Total time "+ std::to_string(avg_inference_time));
+      // Execute the model
+      // torch::Tensor output_tensor = module.forward(inputs).toTensor();
+
+      std::cout << "Output Tensor shape: " << output_tensor.sizes() << "\n";
+      log.LOG_INFO("Output Tensor shape: " + shapeToString(output_tensor.sizes()));
+      // Process the output tensor here
 
 
-    log.printAsteriskLine();
-    log.LOG_INFO("Successfiully completed model infrence");
-    log.printAsteriskLine();
+      log.printAsteriskLine();
+      log.LOG_INFO("Successfiully completed model infrence");
+      log.printAsteriskLine();
+      }
+    // For testing, Creating a dummy image_data vector
+    // int batch_size = 3;
+
+
+    // --- Normalize the image data (using ImageNet statistics ---
+    // std::cout<< "Going to generate the data\n";
+    // auto input_tensor = make_random_image_batch_tensor(
+    //                 batch_size, channels, height, width, mean, stddev, device);
+
+    // std::vector<torch::jit::IValue> inputs;
+    // inputs.push_back(input_tensor);
+    // unsigned int iters = 100;
+    // double total_time = 0.0f;
+    // torch::Tensor output_tensor;
+    // torch::Tensor testing_tensor;
+
+    // for(unsigned int i = 0; i < iters; i++) {
+    //   std::clock_t start = std::clock();
+    //   output_tensor = module.forward(inputs).toTensor();
+    //   total_time += double(std::clock() - start) / CLOCKS_PER_SEC;
+    //   testing_tensor = output_tensor;
+    // }
+    // compute_l2_loss(testing_tensor, output_tensor);
+
+    // // Save the output to a CSV file
+    // torch::save(output_tensor, "outputs/output_tensor.pt");
+    // double avg_inference_time = total_time / iters;
+    // std::cout <<"Total time "<< avg_inference_time << "s \n";
+    // log.LOG_INFO("Total time "+ std::to_string(avg_inference_time));
+    // // Execute the model
+    // // torch::Tensor output_tensor = module.forward(inputs).toTensor();
+
+    // std::cout << "Output Tensor shape: " << output_tensor.sizes() << "\n";
+    // log.LOG_INFO("Output Tensor shape: " + shapeToString(output_tensor.sizes()));
+    // // Process the output tensor here
+
+
+    // log.printAsteriskLine();
+    // log.LOG_INFO("Successfiully completed model infrence");
+    // log.printAsteriskLine();
 
     // consta
 

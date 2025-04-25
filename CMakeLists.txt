@@ -94,3 +94,20 @@ target_link_libraries(inference_post_cust PRIVATE
     hpc
 )
 set_property(TARGET inference_post_cust PROPERTY CXX_STANDARD 17)
+
+# ------------------------------------------------------------------
+# Test executable
+# ------------------------------------------------------------------
+add_executable(fc_test
+    tests/fc_test.cpp
+)
+target_include_directories(fc_test PRIVATE
+    ${TORCH_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/scripts/custom # Include the current directory where main.cpp is located.
+)
+target_link_libraries(fc_test PRIVATE
+    ${TORCH_LIBRARIES}
+    ${CUDA_CUDART_LIBRARY}
+    hpc # Link with your custom library
+)
+set_property(TARGET fc_test PROPERTY CXX_STANDARD 17)

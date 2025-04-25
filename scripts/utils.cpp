@@ -99,3 +99,21 @@ std::vector<std::vector<std::string>> read_csv(const std::string& filename) {
 
     return data;
 }
+
+void compute_l2_loss(torch::Tensor& a, torch::Tensor& b) {
+  std::cout << "Shape of a: [";
+  for (int i = 0; i < a.dim(); ++i) {
+      std::cout << a.size(i) << (i+1 < a.dim() ? ", " : "");
+  }
+  std::cout << "]\n";
+  
+  // compute norms
+    auto n1   = a.norm(2);
+    auto n2   = b.norm(2);
+    auto dist = (a - b).norm(2);
+
+    // print
+    std::cout << "L₂ norm a:   " << n1.item<float>() << "\n"
+              << "L₂ norm b:   " << n2.item<float>() << "\n"
+              << "L₂ dist:     " << dist.item<float>() << "\n";
+}

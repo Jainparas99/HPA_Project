@@ -35,3 +35,5 @@ TORCH_LIBRARY(hpc, m) {
   m.def("fc(Tensor input, Tensor weight, Tensor bias) -> Tensor");
   m.impl("fc", TORCH_FN(fc_forward));
 }
+
+//C++ implemetation of the gc_layer
